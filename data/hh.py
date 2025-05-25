@@ -16,7 +16,6 @@ class HH(VacancyApi):
 
     def __init__(self):
         """Класс для парсинга данных с hh.ru"""
-
         self.__url = 'https://api.hh.ru/vacancies'
         self.__headers = {'User-Agent': 'HH-User-Agent'}
         self.__params = {'text': '', 'page': 0, 'per_page': 10, "area": "113"}
@@ -45,31 +44,15 @@ class Vacancy:
         self.description = description.get('description')
 
     def __str__(self):
-        return (f"{self.salary}")
-
-
+        return self.url_vacancy
 
 
 if __name__ == '__main__':
-    # hh = HH()
-    # # fgh = "vacancies.json"
-    # # adf = HH(fgh)
-    # hh.load_vacancies('python')
-    # # all_vac = hh.get_vacancies()
-    # all_vacancy = Vacancy
-    # print(all_vacancy)
-    # Создаем экземпляр класса HH
     hh_parser = HH()
-
-    # Загружаем вакансии
     hh_parser.load_vacancies('водитель')
-
-    # Получаем список вакансий
     vacancies_list = hh_parser.get_vacancies()
 
-    # Теперь можно работать со списком вакансий
     for vacancy in vacancies_list:
-        # Создаем объекты класса Vacancy с обработкой возможных None значений
         new_vacancy = Vacancy(
             name_vacancy=vacancy,
             url_vacancy=vacancy,
@@ -78,4 +61,5 @@ if __name__ == '__main__':
             description=vacancy
         )
         print(new_vacancy)
+        print("-" * 50)
 
