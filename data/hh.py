@@ -36,15 +36,15 @@ class HH(VacancyApi):
         return self.__vacancies
 
 class Vacancy:
-    def __init__(self, name_vacancy, url_vacancy, salary, town, description):
+    def __init__(self, name_vacancy, url_vacancy, salary, town, snippet):
         self.name_vacancy = name_vacancy.get("name")
         self.url_vacancy = url_vacancy.get('alternate_url')
         self.salary = salary.get('from') if salary else "Зарплата не указана"
         self.town = town.get('name')
-        self.description = description.get('description')
+        self.snippet = snippet.get("snippet").get('requirement')
 
     def __str__(self):
-        return self.url_vacancy
+        return f"{self.snippet}"
 
 
 if __name__ == '__main__':
@@ -58,8 +58,9 @@ if __name__ == '__main__':
             url_vacancy=vacancy,
             salary=vacancy.get('salary'),
             town=vacancy.get('area'),
-            description=vacancy
+            snippet=vacancy
         )
         print(new_vacancy)
         print("-" * 50)
+    # print(vacancies_list)
 
