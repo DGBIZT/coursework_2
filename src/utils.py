@@ -11,11 +11,10 @@ class VacancyApi(ABC):
 class HH(VacancyApi):
     """
     Класс для работы с API HeadHunter
-    Класс Parser является родительским классом, который вам необходимо реализовать
     """
 
     def __init__(self):
-        """Класс для парсинга данных с hh.ru"""
+
         self.__url = 'https://api.hh.ru/vacancies'
         self.__headers = {'User-Agent': 'HH-User-Agent'}
         self.__params = {'text': '', 'page': 0, 'per_page': 10, "area": "113"}
@@ -39,7 +38,7 @@ class Vacancy:
     def __init__(self, name_vacancy, url_vacancy, salary, town, snippet):
         self.name_vacancy = name_vacancy.get("name")
         self.url_vacancy = url_vacancy.get('alternate_url')
-        self.salary = salary.get('from') if salary else "Зарплата не указана"
+        self.salary = salary.get('from') if salary else 0
         self.town = town.get('name')
         self.snippet = snippet.get("snippet").get('requirement')
 
@@ -70,6 +69,7 @@ if __name__ == '__main__':
             town=vacancy.get('area'),
             snippet=vacancy
         )
+        print (new_vacancy.salary)
 
     if len(vacancies_list) >= 2:
         vacancy1_data = vacancies_list[0]
@@ -93,15 +93,18 @@ if __name__ == '__main__':
         if vacancy1 == vacancy2:
             print("Зарплаты равны")
         else:
-            print(f"Зарплаты отличаются:{"\n"} {vacancy1.name_vacancy}{vacancy1.salary}{"\n"} {vacancy2.name_vacancy} {vacancy2.salary}")
+            print(f"Зарплаты отличаются:{"\n"} {vacancy1.name_vacancy} {vacancy1.salary}{"\n"} {vacancy2.name_vacancy} {vacancy2.salary}")
 
         if vacancy1 >= vacancy2:
-            print(f"Вакансия №1 {vacancy1.name_vacancy} зарплата {vacancy1.salary} больше вакансии {vacancy2.name_vacancy} с зарплатой {vacancy2.salary}")
+            print(f"Вакансия №1 {vacancy1.name_vacancy} зарплата {vacancy1.salary} больше вакансии №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary}")
         else:
-            print(f"Вакансия №1 {vacancy2.name_vacancy} зарплата {vacancy2.salary} больше вакансии {vacancy1.name_vacancy} с зарплатой {vacancy1.salary}")
+            print(f"Вакансия №2 {vacancy2.name_vacancy} зарплата {vacancy2.salary} больше вакансии №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary}")
+
     else:
 
         print("Недостаточно данных для сравнения")
+
+
 
         # print(new_vacancy)
         # print("-" * 50)
