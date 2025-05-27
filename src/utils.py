@@ -1,5 +1,6 @@
 import requests
 from abc import ABC, abstractmethod
+import json
 
 class VacancyApi(ABC):
 
@@ -7,6 +8,9 @@ class VacancyApi(ABC):
     def load_vacancies(self, keyword):
         pass
 
+    @abstractmethod
+    def file_writer_base(self):
+        pass
 
 class HH(VacancyApi):
     """
@@ -34,6 +38,13 @@ class HH(VacancyApi):
     def get_vacancies(self):
         return self.__vacancies
 
+    def file_writer_base(self):
+        # base_dir = os.path.dirname(__file__)
+        # full_path = os.path.join(base_dir, file_path)
+
+        with open("data/vacancies.json", "w", encoding="utf-8") as f:
+            json.dump(self.__vacancies,f, ensure_ascii=False, indent=2)
+
 class Vacancy:
     def __init__(self, name_vacancy, url_vacancy, salary, town, snippet):
         self.name_vacancy = name_vacancy.get("name")
@@ -56,6 +67,7 @@ class Vacancy:
         return NotImplemented
 
 
+
 if __name__ == '__main__':
     hh_parser = HH()
     hh_parser.load_vacancies('водитель')
@@ -70,6 +82,7 @@ if __name__ == '__main__':
             snippet=vacancy
         )
         print (new_vacancy.salary)
+    hh_parser.file_writer_base()
 
     if len(vacancies_list) >= 2:
         vacancy1_data = vacancies_list[0]
@@ -96,9 +109,9 @@ if __name__ == '__main__':
             print(f"Зарплаты отличаются:{"\n"} {vacancy1.name_vacancy} {vacancy1.salary}{"\n"} {vacancy2.name_vacancy} {vacancy2.salary}")
 
         if vacancy1 >= vacancy2:
-            print(f"Вакансия №1 {vacancy1.name_vacancy} зарплата {vacancy1.salary} больше вакансии №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary}")
+            print(f"Вакансия №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary} больше вакансии №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary}")
         else:
-            print(f"Вакансия №2 {vacancy2.name_vacancy} зарплата {vacancy2.salary} больше вакансии №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary}")
+            print(f"Вакансия №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary} больше вакансии №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary}")
 
     else:
 
