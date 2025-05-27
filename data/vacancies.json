@@ -1,8 +1,8 @@
 [
   {
-    "id": "121036364",
+    "id": "121027650",
     "premium": false,
-    "name": "Персональный водитель",
+    "name": "Тестировщик программного обеспечения (Junior)",
     "department": null,
     "has_test": false,
     "response_letter_required": false,
@@ -12,14 +12,14 @@
       "url": "https://api.hh.ru/areas/1"
     },
     "salary": {
-      "from": 130000,
-      "to": 140000,
+      "from": 60000,
+      "to": 80000,
       "currency": "RUR",
       "gross": false
     },
     "salary_range": {
-      "from": 130000,
-      "to": 140000,
+      "from": 60000,
+      "to": 80000,
       "currency": "RUR",
       "gross": false,
       "mode": {
@@ -32,936 +32,66 @@
       "id": "open",
       "name": "Открытая"
     },
-    "address": null,
-    "response_url": null,
-    "sort_point_distance": null,
-    "published_at": "2025-05-27T14:51:44+0300",
-    "created_at": "2025-05-27T14:51:44+0300",
-    "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121036364",
-    "show_contacts": true,
-    "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121036364?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121036364",
-    "relations": [],
-    "employer": {
-      "id": "9040371",
-      "name": "Радюкина Екатерина",
-      "url": "https://api.hh.ru/employers/9040371",
-      "alternate_url": "https://hh.ru/employer/9040371",
-      "logo_urls": null,
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=9040371",
-      "accredited_it_employer": false,
-      "employer_rating": {
-        "total_rating": "1.8",
-        "reviews_count": 2
-      },
-      "trusted": true
-    },
-    "snippet": {
-      "requirement": "...персональным <highlighttext>водителем</highlighttext> от 2-х лет. Опрятный и презентабельный внешний вид. Опыт работы в VIP-семьях или опыт работы <highlighttext>водителем</highlighttext>...",
-      "responsibility": "Обеспечение транспортного сопровождения по Москве. Подача авто в назначенное время и место. Содержание автомобиля в чистоте и порядке. "
-    },
-    "contacts": null,
-    "schedule": {
-      "id": "fullDay",
-      "name": "Полный день"
-    },
-    "working_days": [],
-    "working_time_intervals": [],
-    "working_time_modes": [],
-    "accept_temporary": false,
-    "fly_in_fly_out_duration": [],
-    "work_format": [],
-    "working_hours": [
-      {
-        "id": "HOURS_8",
-        "name": "8 часов"
-      },
-      {
-        "id": "HOURS_12",
-        "name": "12 часов"
-      }
-    ],
-    "work_schedule_by_days": [
-      {
-        "id": "TWO_ON_TWO_OFF",
-        "name": "2/2"
-      }
-    ],
-    "night_shifts": false,
-    "professional_roles": [
-      {
-        "id": "21",
-        "name": "Водитель"
-      }
-    ],
-    "accept_incomplete_resumes": true,
-    "experience": {
-      "id": "between1And3",
-      "name": "От 1 года до 3 лет"
-    },
-    "employment": {
-      "id": "full",
-      "name": "Полная занятость"
-    },
-    "employment_form": {
-      "id": "FULL",
-      "name": "Полная"
-    },
-    "internship": false,
-    "adv_response_url": null,
-    "is_adv_vacancy": false,
-    "adv_context": null
-  },
-  {
-    "id": "121024743",
-    "premium": false,
-    "name": "Личный водитель",
-    "department": null,
-    "has_test": false,
-    "response_letter_required": false,
-    "area": {
-      "id": "1",
-      "name": "Москва",
-      "url": "https://api.hh.ru/areas/1"
-    },
-    "salary": {
-      "from": 160000,
-      "to": null,
-      "currency": "RUR",
-      "gross": false
-    },
-    "salary_range": {
-      "from": 160000,
-      "to": null,
-      "currency": "RUR",
-      "gross": false,
-      "mode": {
-        "id": "MONTH",
-        "name": "За месяц"
-      },
-      "frequency": {
-        "id": "TWICE_PER_MONTH",
-        "name": "Два раза в месяц"
-      }
-    },
-    "type": {
-      "id": "open",
-      "name": "Открытая"
-    },
     "address": {
-      "city": "коттеджный посёлок Балтия",
+      "city": null,
       "street": null,
       "building": null,
-      "lat": 55.779499,
-      "lng": 37.082688,
+      "lat": null,
+      "lng": null,
       "description": null,
-      "raw": "коттеджный посёлок Балтия",
-      "metro": null,
-      "metro_stations": [],
-      "id": "16353979"
-    },
-    "response_url": null,
-    "sort_point_distance": null,
-    "published_at": "2025-05-27T12:00:09+0300",
-    "created_at": "2025-05-27T12:00:09+0300",
-    "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121024743",
-    "show_logo_in_search": null,
-    "show_contacts": true,
-    "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121024743?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121024743",
-    "relations": [],
-    "employer": {
-      "id": "12040",
-      "name": "Европласт, объединение предприятий",
-      "url": "https://api.hh.ru/employers/12040",
-      "alternate_url": "https://hh.ru/employer/12040",
-      "logo_urls": {
-        "original": "https://img.hhcdn.ru/employer-logo-original/327894.png",
-        "90": "https://img.hhcdn.ru/employer-logo/1753926.png",
-        "240": "https://img.hhcdn.ru/employer-logo/1753927.png"
-      },
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=12040",
-      "accredited_it_employer": false,
-      "employer_rating": {
-        "total_rating": "3.7",
-        "reviews_count": 23
-      },
-      "trusted": true
-    },
-    "snippet": {
-      "requirement": "соблюдение правил делового этикета. Требования: - опыт персональным <highlighttext>водителем</highlighttext>. - хорошее знание Москвы и Московской области‚ умение выбирать оптимальные маршруты поездок. - ",
-      "responsibility": "обеспечение безопасного и комфортного сопровождения руководителя и членов его семьи. - выполнение служебных поручений руководителя. - контроль технического состояния автомобиля: своевременное прохождение..."
-    },
-    "contacts": null,
-    "schedule": {
-      "id": "fullDay",
-      "name": "Полный день"
-    },
-    "working_days": [],
-    "working_time_intervals": [],
-    "working_time_modes": [],
-    "accept_temporary": false,
-    "fly_in_fly_out_duration": [],
-    "work_format": [
-      {
-        "id": "ON_SITE",
-        "name": "На месте работодателя"
-      }
-    ],
-    "working_hours": [
-      {
-        "id": "HOURS_8",
-        "name": "8 часов"
-      }
-    ],
-    "work_schedule_by_days": [
-      {
-        "id": "SIX_ON_ONE_OFF",
-        "name": "6/1"
-      }
-    ],
-    "night_shifts": false,
-    "professional_roles": [
-      {
-        "id": "21",
-        "name": "Водитель"
-      }
-    ],
-    "accept_incomplete_resumes": true,
-    "experience": {
-      "id": "moreThan6",
-      "name": "Более 6 лет"
-    },
-    "employment": {
-      "id": "full",
-      "name": "Полная занятость"
-    },
-    "employment_form": {
-      "id": "FULL",
-      "name": "Полная"
-    },
-    "internship": false,
-    "adv_response_url": null,
-    "is_adv_vacancy": false,
-    "adv_context": null
-  },
-  {
-    "id": "121034812",
-    "premium": false,
-    "name": "Личный водитель руководителя",
-    "department": null,
-    "has_test": false,
-    "response_letter_required": false,
-    "area": {
-      "id": "1",
-      "name": "Москва",
-      "url": "https://api.hh.ru/areas/1"
-    },
-    "salary": null,
-    "salary_range": null,
-    "type": {
-      "id": "open",
-      "name": "Открытая"
-    },
-    "address": null,
-    "response_url": null,
-    "sort_point_distance": null,
-    "published_at": "2025-05-27T14:27:45+0300",
-    "created_at": "2025-05-27T14:27:45+0300",
-    "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121034812",
-    "show_logo_in_search": null,
-    "show_contacts": false,
-    "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121034812?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121034812",
-    "relations": [],
-    "employer": {
-      "id": "11785177",
-      "name": "Протон",
-      "url": "https://api.hh.ru/employers/11785177",
-      "alternate_url": "https://hh.ru/employer/11785177",
-      "logo_urls": {
-        "original": "https://img.hhcdn.ru/employer-logo-original/1382294.jpg",
-        "90": "https://img.hhcdn.ru/employer-logo/7148963.jpeg",
-        "240": "https://img.hhcdn.ru/employer-logo/7148964.jpeg"
-      },
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=11785177",
-      "accredited_it_employer": false,
-      "employer_rating": {
-        "total_rating": "0",
-        "reviews_count": null
-      },
-      "trusted": true
-    },
-    "snippet": {
-      "requirement": "Опыт работы персональным/семейным <highlighttext>водителем</highlighttext> или в премиальных сервисах такси на машинах представительского класса. Знание города без использования навигатора. ",
-      "responsibility": "Подача автомобиля (Hongqi H9) в определенное работодателем место и время. Сопровождение руководителя по заданному маршруту. Содержание автомобиля в чистоте..."
-    },
-    "contacts": null,
-    "schedule": {
-      "id": "fullDay",
-      "name": "Полный день"
-    },
-    "working_days": [],
-    "working_time_intervals": [],
-    "working_time_modes": [],
-    "accept_temporary": false,
-    "fly_in_fly_out_duration": [],
-    "work_format": [
-      {
-        "id": "FIELD_WORK",
-        "name": "Разъездной"
-      }
-    ],
-    "working_hours": [
-      {
-        "id": "HOURS_8",
-        "name": "8 часов"
-      }
-    ],
-    "work_schedule_by_days": [
-      {
-        "id": "OTHER",
-        "name": "Другое"
-      }
-    ],
-    "night_shifts": true,
-    "professional_roles": [
-      {
-        "id": "21",
-        "name": "Водитель"
-      }
-    ],
-    "accept_incomplete_resumes": false,
-    "experience": {
-      "id": "between3And6",
-      "name": "От 3 до 6 лет"
-    },
-    "employment": {
-      "id": "full",
-      "name": "Полная занятость"
-    },
-    "employment_form": {
-      "id": "FULL",
-      "name": "Полная"
-    },
-    "internship": false,
-    "adv_response_url": null,
-    "is_adv_vacancy": false,
-    "adv_context": null
-  },
-  {
-    "id": "121010615",
-    "premium": false,
-    "name": "Водитель офисный",
-    "department": null,
-    "has_test": false,
-    "response_letter_required": false,
-    "area": {
-      "id": "1",
-      "name": "Москва",
-      "url": "https://api.hh.ru/areas/1"
-    },
-    "salary": {
-      "from": 100000,
-      "to": null,
-      "currency": "RUR",
-      "gross": false
-    },
-    "salary_range": {
-      "from": 100000,
-      "to": null,
-      "currency": "RUR",
-      "gross": false,
-      "mode": {
-        "id": "MONTH",
-        "name": "За месяц"
-      },
-      "frequency": {
-        "id": "TWICE_PER_MONTH",
-        "name": "Два раза в месяц"
-      }
-    },
-    "type": {
-      "id": "open",
-      "name": "Открытая"
-    },
-    "address": {
-      "city": "Москва",
-      "street": "улица Мичуринский Проспект, Олимпийская Деревня",
-      "building": "1к1",
-      "lat": 55.679783,
-      "lng": 37.469521,
-      "description": null,
-      "raw": "Москва, улица Мичуринский Проспект, Олимпийская Деревня, 1к1",
-      "metro": null,
-      "metro_stations": [],
-      "id": "685658"
-    },
-    "response_url": null,
-    "sort_point_distance": null,
-    "published_at": "2025-05-27T08:53:08+0300",
-    "created_at": "2025-05-27T08:53:08+0300",
-    "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121010615",
-    "show_contacts": false,
-    "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121010615?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121010615",
-    "relations": [],
-    "employer": {
-      "id": "42062",
-      "name": "Доширак Рус",
-      "url": "https://api.hh.ru/employers/42062",
-      "alternate_url": "https://hh.ru/employer/42062",
-      "logo_urls": null,
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=42062",
-      "accredited_it_employer": false,
-      "employer_rating": {
-        "total_rating": "4.4",
-        "reviews_count": 14
-      },
-      "trusted": true
-    },
-    "snippet": {
-      "requirement": "Водительские права категории \"В\". Стаж вождения не менее трех лет.",
-      "responsibility": "Своевременная подача автомобиля в указанное время и место. Выполнение личных поручений руководителя и семьи руководителя. Сопровождение руководителя в командировках. "
-    },
-    "contacts": null,
-    "schedule": {
-      "id": "fullDay",
-      "name": "Полный день"
-    },
-    "working_days": [],
-    "working_time_intervals": [],
-    "working_time_modes": [],
-    "accept_temporary": false,
-    "fly_in_fly_out_duration": [],
-    "work_format": [
-      {
-        "id": "ON_SITE",
-        "name": "На месте работодателя"
-      },
-      {
-        "id": "FIELD_WORK",
-        "name": "Разъездной"
-      }
-    ],
-    "working_hours": [
-      {
-        "id": "HOURS_8",
-        "name": "8 часов"
-      }
-    ],
-    "work_schedule_by_days": [
-      {
-        "id": "FIVE_ON_TWO_OFF",
-        "name": "5/2"
-      }
-    ],
-    "night_shifts": false,
-    "professional_roles": [
-      {
-        "id": "21",
-        "name": "Водитель"
-      }
-    ],
-    "accept_incomplete_resumes": false,
-    "experience": {
-      "id": "between3And6",
-      "name": "От 3 до 6 лет"
-    },
-    "employment": {
-      "id": "full",
-      "name": "Полная занятость"
-    },
-    "employment_form": {
-      "id": "FULL",
-      "name": "Полная"
-    },
-    "internship": false,
-    "adv_response_url": null,
-    "is_adv_vacancy": false,
-    "adv_context": null
-  },
-  {
-    "id": "121016447",
-    "premium": false,
-    "name": "Семейный водитель",
-    "department": null,
-    "has_test": false,
-    "response_letter_required": false,
-    "area": {
-      "id": "1",
-      "name": "Москва",
-      "url": "https://api.hh.ru/areas/1"
-    },
-    "salary": {
-      "from": 140000,
-      "to": 140000,
-      "currency": "RUR",
-      "gross": true
-    },
-    "salary_range": {
-      "from": 140000,
-      "to": 140000,
-      "currency": "RUR",
-      "gross": true,
-      "mode": {
-        "id": "MONTH",
-        "name": "За месяц"
-      },
-      "frequency": {
-        "id": "TWICE_PER_MONTH",
-        "name": "Два раза в месяц"
-      }
-    },
-    "type": {
-      "id": "open",
-      "name": "Открытая"
-    },
-    "address": null,
-    "response_url": null,
-    "sort_point_distance": null,
-    "published_at": "2025-05-27T10:15:47+0300",
-    "created_at": "2025-05-27T10:15:47+0300",
-    "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121016447",
-    "show_logo_in_search": null,
-    "show_contacts": true,
-    "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121016447?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121016447",
-    "relations": [],
-    "employer": {
-      "id": "10173269",
-      "name": "Агентство Мэри Бонн",
-      "url": "https://api.hh.ru/employers/10173269",
-      "alternate_url": "https://hh.ru/employer/10173269",
-      "logo_urls": {
-        "original": "https://img.hhcdn.ru/employer-logo-original/1196958.png",
-        "90": "https://img.hhcdn.ru/employer-logo/6408281.png",
-        "240": "https://img.hhcdn.ru/employer-logo/6408282.png"
-      },
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=10173269",
-      "accredited_it_employer": false,
-      "employer_rating": null,
-      "trusted": true
-    },
-    "snippet": {
-      "requirement": "Опыт работы в семьях. Опыт сопровождения детей. Аккуратное вождение.",
-      "responsibility": "Сопровождение детей. Своевременная подача. Заправка и уход за авто. Выполнение мелких поручений."
-    },
-    "contacts": null,
-    "schedule": {
-      "id": "fullDay",
-      "name": "Полный день"
-    },
-    "working_days": [],
-    "working_time_intervals": [],
-    "working_time_modes": [],
-    "accept_temporary": false,
-    "fly_in_fly_out_duration": [],
-    "work_format": [
-      {
-        "id": "ON_SITE",
-        "name": "На месте работодателя"
-      },
-      {
-        "id": "FIELD_WORK",
-        "name": "Разъездной"
-      }
-    ],
-    "working_hours": [
-      {
-        "id": "HOURS_10",
-        "name": "10 часов"
-      },
-      {
-        "id": "HOURS_11",
-        "name": "11 часов"
-      },
-      {
-        "id": "HOURS_12",
-        "name": "12 часов"
-      }
-    ],
-    "work_schedule_by_days": [
-      {
-        "id": "FIVE_ON_TWO_OFF",
-        "name": "5/2"
-      }
-    ],
-    "night_shifts": false,
-    "professional_roles": [
-      {
-        "id": "21",
-        "name": "Водитель"
-      }
-    ],
-    "accept_incomplete_resumes": true,
-    "experience": {
-      "id": "moreThan6",
-      "name": "Более 6 лет"
-    },
-    "employment": {
-      "id": "full",
-      "name": "Полная занятость"
-    },
-    "employment_form": {
-      "id": "FULL",
-      "name": "Полная"
-    },
-    "internship": false,
-    "adv_response_url": null,
-    "is_adv_vacancy": false,
-    "adv_context": null
-  },
-  {
-    "id": "121033117",
-    "premium": false,
-    "name": "Личный помощник руководителя/водитель",
-    "department": null,
-    "has_test": false,
-    "response_letter_required": false,
-    "area": {
-      "id": "1",
-      "name": "Москва",
-      "url": "https://api.hh.ru/areas/1"
-    },
-    "salary": null,
-    "salary_range": null,
-    "type": {
-      "id": "open",
-      "name": "Открытая"
-    },
-    "address": {
-      "city": "Москва",
-      "street": "Багратионовский проезд",
-      "building": "7к20В",
-      "lat": 55.743522,
-      "lng": 37.505508,
-      "description": null,
-      "raw": "Москва, Багратионовский проезд, 7к20В",
+      "raw": null,
       "metro": {
-        "station_name": "Багратионовская",
-        "line_name": "Филевская",
-        "station_id": "4.14",
-        "line_id": "4",
-        "lat": 55.743544,
-        "lng": 37.497042
+        "station_name": "Беговая",
+        "line_name": "Таганско-Краснопресненская",
+        "station_id": "7.18",
+        "line_id": "7",
+        "lat": 55.773505,
+        "lng": 37.545518
       },
       "metro_stations": [
         {
-          "station_name": "Багратионовская",
-          "line_name": "Филевская",
-          "station_id": "4.14",
-          "line_id": "4",
-          "lat": 55.743544,
-          "lng": 37.497042
-        },
-        {
-          "station_name": "Фили",
-          "line_name": "Филевская",
-          "station_id": "4.151",
-          "line_id": "4",
-          "lat": 55.746763,
-          "lng": 37.514035
+          "station_name": "Беговая",
+          "line_name": "Таганско-Краснопресненская",
+          "station_id": "7.18",
+          "line_id": "7",
+          "lat": 55.773505,
+          "lng": 37.545518
         }
       ],
-      "id": "14024161"
+      "id": "683011"
     },
     "response_url": null,
     "sort_point_distance": null,
-    "published_at": "2025-05-27T14:07:34+0300",
-    "created_at": "2025-05-27T14:07:34+0300",
+    "published_at": "2025-05-27T12:40:15+0300",
+    "created_at": "2025-05-27T12:40:15+0300",
     "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121033117",
+    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121027650",
     "show_logo_in_search": null,
-    "show_contacts": false,
-    "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121033117?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121033117",
-    "relations": [],
-    "employer": {
-      "id": "10156798",
-      "name": "АНАКС",
-      "url": "https://api.hh.ru/employers/10156798",
-      "alternate_url": "https://hh.ru/employer/10156798",
-      "logo_urls": {
-        "original": "https://img.hhcdn.ru/employer-logo-original/1142087.png",
-        "90": "https://img.hhcdn.ru/employer-logo/6188921.png",
-        "240": "https://img.hhcdn.ru/employer-logo/6188922.png"
-      },
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=10156798",
-      "accredited_it_employer": false,
-      "employer_rating": null,
-      "trusted": true
-    },
-    "snippet": {
-      "requirement": "Аккуратное вождение. Умение составлять оптимальный маршрут передвижения. Опыт работы личным <highlighttext>водителем</highlighttext> от 10 лет. Категория прав B. Категория С. ",
-      "responsibility": "Своевременная подача автомобиля. Сопровождение семьи руководителя (отвезти/встретить детей в/из школы, кружков). Уход за автомобилем (контроль технического состояния), содержание..."
-    },
-    "contacts": null,
-    "schedule": {
-      "id": "fullDay",
-      "name": "Полный день"
-    },
-    "working_days": [],
-    "working_time_intervals": [],
-    "working_time_modes": [],
-    "accept_temporary": false,
-    "fly_in_fly_out_duration": [],
-    "work_format": [
-      {
-        "id": "ON_SITE",
-        "name": "На месте работодателя"
-      }
-    ],
-    "working_hours": [
-      {
-        "id": "HOURS_8",
-        "name": "8 часов"
-      }
-    ],
-    "work_schedule_by_days": [
-      {
-        "id": "FIVE_ON_TWO_OFF",
-        "name": "5/2"
-      }
-    ],
-    "night_shifts": false,
-    "professional_roles": [
-      {
-        "id": "90",
-        "name": "Охранник"
-      }
-    ],
-    "accept_incomplete_resumes": true,
-    "experience": {
-      "id": "moreThan6",
-      "name": "Более 6 лет"
-    },
-    "employment": {
-      "id": "full",
-      "name": "Полная занятость"
-    },
-    "employment_form": {
-      "id": "FULL",
-      "name": "Полная"
-    },
-    "internship": false,
-    "adv_response_url": null,
-    "is_adv_vacancy": false,
-    "adv_context": null
-  },
-  {
-    "id": "121028205",
-    "premium": false,
-    "name": "Офисный водитель",
-    "department": null,
-    "has_test": false,
-    "response_letter_required": false,
-    "area": {
-      "id": "2",
-      "name": "Санкт-Петербург",
-      "url": "https://api.hh.ru/areas/2"
-    },
-    "salary": {
-      "from": null,
-      "to": 100000,
-      "currency": "RUR",
-      "gross": false
-    },
-    "salary_range": {
-      "from": null,
-      "to": 100000,
-      "currency": "RUR",
-      "gross": false,
-      "mode": {
-        "id": "MONTH",
-        "name": "За месяц"
-      },
-      "frequency": {
-        "id": "TWICE_PER_MONTH",
-        "name": "Два раза в месяц"
-      }
-    },
-    "type": {
-      "id": "open",
-      "name": "Открытая"
-    },
-    "address": {
-      "city": "Санкт-Петербург",
-      "street": "Большая Монетная улица",
-      "building": "16",
-      "lat": 59.962242,
-      "lng": 30.319758,
-      "description": null,
-      "raw": "Санкт-Петербург, Большая Монетная улица, 16",
-      "metro": null,
-      "metro_stations": [],
-      "id": "4634907"
-    },
-    "response_url": null,
-    "sort_point_distance": null,
-    "published_at": "2025-05-27T12:48:29+0300",
-    "created_at": "2025-05-27T12:48:29+0300",
-    "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121028205",
     "show_contacts": true,
     "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121028205?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121028205",
+    "url": "https://api.hh.ru/vacancies/121027650?host=hh.ru",
+    "alternate_url": "https://hh.ru/vacancy/121027650",
     "relations": [],
     "employer": {
-      "id": "1978905",
-      "name": "Санкт-Петербургская инвестиционная компания",
-      "url": "https://api.hh.ru/employers/1978905",
-      "alternate_url": "https://hh.ru/employer/1978905",
-      "logo_urls": null,
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=1978905",
-      "accredited_it_employer": false,
-      "employer_rating": {
-        "total_rating": "0",
-        "reviews_count": 0
-      },
-      "trusted": true
-    },
-    "snippet": {
-      "requirement": "Стаж работы <highlighttext>водителем</highlighttext> не менее 5 лет. Отличное знание города. Ответственность, пунктуальность, честность.",
-      "responsibility": "Сопровождение руководства компании. Выполнение офисных поручений. Обеспечение безаварийного комфортного профессионального вождения автомобиля. Постоянное содержание вверенного автомобиля в идеальном порядке."
-    },
-    "contacts": null,
-    "schedule": {
-      "id": "fullDay",
-      "name": "Полный день"
-    },
-    "working_days": [],
-    "working_time_intervals": [],
-    "working_time_modes": [],
-    "accept_temporary": false,
-    "fly_in_fly_out_duration": [],
-    "work_format": [],
-    "working_hours": [
-      {
-        "id": "HOURS_8",
-        "name": "8 часов"
-      }
-    ],
-    "work_schedule_by_days": [
-      {
-        "id": "FIVE_ON_TWO_OFF",
-        "name": "5/2"
-      }
-    ],
-    "night_shifts": false,
-    "professional_roles": [
-      {
-        "id": "21",
-        "name": "Водитель"
-      }
-    ],
-    "accept_incomplete_resumes": false,
-    "experience": {
-      "id": "moreThan6",
-      "name": "Более 6 лет"
-    },
-    "employment": {
-      "id": "full",
-      "name": "Полная занятость"
-    },
-    "employment_form": {
-      "id": "FULL",
-      "name": "Полная"
-    },
-    "internship": false,
-    "adv_response_url": null,
-    "is_adv_vacancy": false,
-    "adv_context": null
-  },
-  {
-    "id": "121022554",
-    "premium": false,
-    "name": "Водитель легкового офисного автомобиля",
-    "department": null,
-    "has_test": false,
-    "response_letter_required": false,
-    "area": {
-      "id": "2",
-      "name": "Санкт-Петербург",
-      "url": "https://api.hh.ru/areas/2"
-    },
-    "salary": {
-      "from": 95000,
-      "to": 105000,
-      "currency": "RUR",
-      "gross": false
-    },
-    "salary_range": {
-      "from": 95000,
-      "to": 105000,
-      "currency": "RUR",
-      "gross": false,
-      "mode": {
-        "id": "MONTH",
-        "name": "За месяц"
-      },
-      "frequency": null
-    },
-    "type": {
-      "id": "open",
-      "name": "Открытая"
-    },
-    "address": {
-      "city": "посёлок Парголово",
-      "street": "Горское шоссе",
-      "building": "6",
-      "lat": 60.09774,
-      "lng": 30.243347,
-      "description": null,
-      "raw": "посёлок Парголово, Горское шоссе, 6",
-      "metro": null,
-      "metro_stations": [],
-      "id": "18509136"
-    },
-    "response_url": null,
-    "sort_point_distance": null,
-    "published_at": "2025-05-27T11:31:17+0300",
-    "created_at": "2025-05-27T11:31:17+0300",
-    "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121022554",
-    "show_logo_in_search": null,
-    "show_contacts": false,
-    "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121022554?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121022554",
-    "relations": [],
-    "employer": {
-      "id": "1035394",
-      "name": "Красное & Белое, розничная сеть",
-      "url": "https://api.hh.ru/employers/1035394",
-      "alternate_url": "https://hh.ru/employer/1035394",
+      "id": "1050336",
+      "name": "Безлимит",
+      "url": "https://api.hh.ru/employers/1050336",
+      "alternate_url": "https://hh.ru/employer/1050336",
       "logo_urls": {
-        "original": "https://img.hhcdn.ru/employer-logo-original/90459.jpg",
-        "90": "https://img.hhcdn.ru/employer-logo/706154.jpeg",
-        "240": "https://img.hhcdn.ru/employer-logo/706155.jpeg"
+        "original": "https://img.hhcdn.ru/employer-logo-original/1398107.png",
+        "90": "https://img.hhcdn.ru/employer-logo/7212199.png",
+        "240": "https://img.hhcdn.ru/employer-logo/7212200.png"
       },
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=1035394",
+      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=1050336",
       "accredited_it_employer": false,
       "employer_rating": {
-        "total_rating": "3.4",
-        "reviews_count": 9998
+        "total_rating": "4.7",
+        "reviews_count": 113
       },
       "trusted": true
     },
     "snippet": {
-      "requirement": "Наличие водительского удостоверения категории B. Опыт работы в аналогичной должности от 3 лет. Знание дорожной сети Санкт- Петербурга. ",
+      "requirement": "Опыт работы с DEVtools. - Основы автоматизации (знание <highlighttext>Python</highlighttext>/JavaScript/Java на уровне чтения кода — будет преимуществом). Личные качества: - Внимательность к...",
       "responsibility": null
     },
     "contacts": null,
@@ -990,146 +120,11 @@
     "night_shifts": false,
     "professional_roles": [
       {
-        "id": "21",
-        "name": "Водитель"
+        "id": "124",
+        "name": "Тестировщик"
       }
     ],
     "accept_incomplete_resumes": false,
-    "experience": {
-      "id": "between3And6",
-      "name": "От 3 до 6 лет"
-    },
-    "employment": {
-      "id": "full",
-      "name": "Полная занятость"
-    },
-    "employment_form": {
-      "id": "FULL",
-      "name": "Полная"
-    },
-    "internship": false,
-    "adv_response_url": null,
-    "is_adv_vacancy": false,
-    "adv_context": null
-  },
-  {
-    "id": "121012863",
-    "premium": false,
-    "name": "Личный водитель директора/помощник",
-    "department": null,
-    "has_test": false,
-    "response_letter_required": false,
-    "area": {
-      "id": "53",
-      "name": "Краснодар",
-      "url": "https://api.hh.ru/areas/53"
-    },
-    "salary": {
-      "from": 4000,
-      "to": null,
-      "currency": "RUR",
-      "gross": false
-    },
-    "salary_range": {
-      "from": 4000,
-      "to": null,
-      "currency": "RUR",
-      "gross": false,
-      "mode": {
-        "id": "SHIFT",
-        "name": "За смену"
-      },
-      "frequency": {
-        "id": "TWICE_PER_MONTH",
-        "name": "Два раза в месяц"
-      }
-    },
-    "type": {
-      "id": "open",
-      "name": "Открытая"
-    },
-    "address": {
-      "city": "посёлок Индустриальный",
-      "street": "улица имени И.В. Безуленко",
-      "building": "17",
-      "lat": 45.10720443725586,
-      "lng": 39.10053634643555,
-      "description": null,
-      "raw": "посёлок Индустриальный, улица имени И.В. Безуленко, 17",
-      "metro": null,
-      "metro_stations": [],
-      "id": "6835046"
-    },
-    "response_url": null,
-    "sort_point_distance": null,
-    "published_at": "2025-05-27T09:30:44+0300",
-    "created_at": "2025-05-27T09:30:44+0300",
-    "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121012863",
-    "show_logo_in_search": null,
-    "show_contacts": true,
-    "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121012863?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121012863",
-    "relations": [],
-    "employer": {
-      "id": "2436128",
-      "name": "РПТ",
-      "url": "https://api.hh.ru/employers/2436128",
-      "alternate_url": "https://hh.ru/employer/2436128",
-      "logo_urls": {
-        "original": "https://img.hhcdn.ru/employer-logo-original/1053707.jpg",
-        "90": "https://img.hhcdn.ru/employer-logo/5835473.jpeg",
-        "240": "https://img.hhcdn.ru/employer-logo/5835474.jpeg"
-      },
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=2436128",
-      "accredited_it_employer": false,
-      "employer_rating": {
-        "total_rating": "4.8",
-        "reviews_count": 185
-      },
-      "trusted": true
-    },
-    "snippet": {
-      "requirement": "Boдитeльcкое удостовеpение кaтeгоpии B (oбязательно), C и D желательно. Опыт рабoты пepcoнaльным вoдитeлeм или в бизнес такси oт 3 лет. ",
-      "responsibility": "Обеспечивать комфортную перевозку и сопровождение руководителя компании и других лиц по его распоряжению. Выполнять перевозки и прочие поручения директора. "
-    },
-    "contacts": null,
-    "schedule": {
-      "id": "fullDay",
-      "name": "Полный день"
-    },
-    "working_days": [],
-    "working_time_intervals": [],
-    "working_time_modes": [],
-    "accept_temporary": false,
-    "fly_in_fly_out_duration": [],
-    "work_format": [
-      {
-        "id": "FIELD_WORK",
-        "name": "Разъездной"
-      }
-    ],
-    "working_hours": [
-      {
-        "id": "HOURS_12",
-        "name": "12 часов"
-      }
-    ],
-    "work_schedule_by_days": [
-      {
-        "id": "FIVE_ON_TWO_OFF",
-        "name": "5/2"
-      }
-    ],
-    "night_shifts": false,
-    "professional_roles": [
-      {
-        "id": "90",
-        "name": "Охранник"
-      }
-    ],
-    "accept_incomplete_resumes": true,
     "experience": {
       "id": "between1And3",
       "name": "От 1 года до 3 лет"
@@ -1148,26 +143,26 @@
     "adv_context": null
   },
   {
-    "id": "121013468",
+    "id": "120997264",
     "premium": false,
-    "name": "Водитель рейсовый категории В",
+    "name": "Frontend-разработчик",
     "department": null,
     "has_test": false,
     "response_letter_required": false,
     "area": {
-      "id": "24",
-      "name": "Волгоград",
-      "url": "https://api.hh.ru/areas/24"
+      "id": "1",
+      "name": "Москва",
+      "url": "https://api.hh.ru/areas/1"
     },
     "salary": {
-      "from": 70000,
-      "to": null,
+      "from": 240000,
+      "to": 300000,
       "currency": "RUR",
       "gross": false
     },
     "salary_range": {
-      "from": 70000,
-      "to": null,
+      "from": 240000,
+      "to": 300000,
       "currency": "RUR",
       "gross": false,
       "mode": {
@@ -1180,55 +175,40 @@
       "id": "open",
       "name": "Открытая"
     },
-    "address": {
-      "city": "Волгоград",
-      "street": "улица Венецианова",
-      "building": "2Б",
-      "lat": 48.702935,
-      "lng": 44.447976,
-      "description": null,
-      "raw": "Волгоград, улица Венецианова, 2Б",
-      "metro": null,
-      "metro_stations": [],
-      "id": "18441467"
-    },
+    "address": null,
     "response_url": null,
     "sort_point_distance": null,
-    "published_at": "2025-05-27T09:39:45+0300",
-    "created_at": "2025-05-27T09:39:45+0300",
+    "published_at": "2025-05-26T18:32:33+0300",
+    "created_at": "2025-05-26T18:32:33+0300",
     "archived": false,
-    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121013468",
-    "branding": {
-      "type": "CONSTRUCTOR",
-      "tariff": "BASIC"
-    },
-    "show_logo_in_search": true,
-    "show_contacts": true,
+    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=120997264",
+    "show_logo_in_search": null,
+    "show_contacts": false,
     "insider_interview": null,
-    "url": "https://api.hh.ru/vacancies/121013468?host=hh.ru",
-    "alternate_url": "https://hh.ru/vacancy/121013468",
+    "url": "https://api.hh.ru/vacancies/120997264?host=hh.ru",
+    "alternate_url": "https://hh.ru/vacancy/120997264",
     "relations": [],
     "employer": {
-      "id": "2549285",
-      "name": "ТРИНИТИ-ПАРТС",
-      "url": "https://api.hh.ru/employers/2549285",
-      "alternate_url": "https://hh.ru/employer/2549285",
+      "id": "10232312",
+      "name": "Протектор",
+      "url": "https://api.hh.ru/employers/10232312",
+      "alternate_url": "https://hh.ru/employer/10232312",
       "logo_urls": {
-        "original": "https://img.hhcdn.ru/employer-logo-original/360873.png",
-        "90": "https://img.hhcdn.ru/employer-logo/1885754.png",
-        "240": "https://img.hhcdn.ru/employer-logo/1885755.png"
+        "original": "https://img.hhcdn.ru/employer-logo-original/1397098.png",
+        "90": "https://img.hhcdn.ru/employer-logo/7208167.png",
+        "240": "https://img.hhcdn.ru/employer-logo/7208168.png"
       },
-      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=2549285",
+      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=10232312",
       "accredited_it_employer": false,
       "employer_rating": {
-        "total_rating": "4.3",
-        "reviews_count": 57
+        "total_rating": "0",
+        "reviews_count": 0
       },
       "trusted": true
     },
     "snippet": {
-      "requirement": "Наличие категории B. Водительский стаж не менее трех лет. Ответственность, исполнительность.",
-      "responsibility": "Поездки по установленному маршруту Волгоград-Борисоглебск на корпоративном автомобиле. Погрузка, разгрузка товара (автомобильные запчасти). Контроль технического состояния закрепленного ТС. "
+      "requirement": "Высшее образование. Опыт разработки коммерческих приложений на React от 3 лет (JavaScript, TypeScript). Опыт разработки чатов на WebSocket. ",
+      "responsibility": "Планирование, проектирование архитектуры, разработка, тестирование и внедрение новых модулей на React. Обеспечение качественной реализации UI/UX- дизайна, безопасности данных и..."
     },
     "contacts": null,
     "schedule": {
@@ -1249,21 +229,769 @@
     ],
     "work_schedule_by_days": [
       {
-        "id": "TWO_ON_TWO_OFF",
-        "name": "2/2"
+        "id": "FIVE_ON_TWO_OFF",
+        "name": "5/2"
       }
     ],
     "night_shifts": false,
     "professional_roles": [
       {
-        "id": "21",
-        "name": "Водитель"
+        "id": "96",
+        "name": "Программист, разработчик"
       }
     ],
     "accept_incomplete_resumes": false,
     "experience": {
       "id": "between3And6",
       "name": "От 3 до 6 лет"
+    },
+    "employment": {
+      "id": "full",
+      "name": "Полная занятость"
+    },
+    "employment_form": {
+      "id": "FULL",
+      "name": "Полная"
+    },
+    "internship": false,
+    "adv_response_url": null,
+    "is_adv_vacancy": false,
+    "adv_context": null
+  },
+  {
+    "id": "120972964",
+    "premium": false,
+    "name": "Тестировщик",
+    "department": null,
+    "has_test": false,
+    "response_letter_required": false,
+    "area": {
+      "id": "55",
+      "name": "Курган",
+      "url": "https://api.hh.ru/areas/55"
+    },
+    "salary": null,
+    "salary_range": null,
+    "type": {
+      "id": "open",
+      "name": "Открытая"
+    },
+    "address": {
+      "city": "Курган",
+      "street": "проспект Машиностроителей",
+      "building": "30А",
+      "lat": 55.469178,
+      "lng": 65.328039,
+      "description": null,
+      "raw": "Курган, проспект Машиностроителей, 30А",
+      "metro": null,
+      "metro_stations": [],
+      "id": "5821905"
+    },
+    "response_url": null,
+    "sort_point_distance": null,
+    "published_at": "2025-05-26T12:24:27+0300",
+    "created_at": "2025-05-26T12:24:27+0300",
+    "archived": false,
+    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=120972964",
+    "branding": {
+      "type": "MAKEUP",
+      "tariff": null
+    },
+    "show_logo_in_search": true,
+    "show_contacts": false,
+    "insider_interview": null,
+    "url": "https://api.hh.ru/vacancies/120972964?host=hh.ru",
+    "alternate_url": "https://hh.ru/vacancy/120972964",
+    "relations": [],
+    "employer": {
+      "id": "5425152",
+      "name": "Maxim technology",
+      "url": "https://api.hh.ru/employers/5425152",
+      "alternate_url": "https://hh.ru/employer/5425152",
+      "logo_urls": {
+        "original": "https://img.hhcdn.ru/employer-logo-original/1218667.png",
+        "90": "https://img.hhcdn.ru/employer-logo/6495109.png",
+        "240": "https://img.hhcdn.ru/employer-logo/6495110.png"
+      },
+      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=5425152",
+      "accredited_it_employer": true,
+      "employer_rating": {
+        "total_rating": "4.9",
+        "reviews_count": 35
+      },
+      "trusted": true
+    },
+    "snippet": {
+      "requirement": "Можете работать с GNU/Linux-подобными операционными системами. Умеете читать код на <highlighttext>python</highlighttext>. Умеете по логам выяснить, в чем ошибка...",
+      "responsibility": "Ручное и функциональное тестирование мобильных приложений и web-сервисов. Создание баг-репортов по результатам тестирования. Можете тестировать web, mobile (frontend..."
+    },
+    "contacts": null,
+    "schedule": {
+      "id": "fullDay",
+      "name": "Полный день"
+    },
+    "working_days": [],
+    "working_time_intervals": [],
+    "working_time_modes": [],
+    "accept_temporary": false,
+    "fly_in_fly_out_duration": [],
+    "work_format": [
+      {
+        "id": "ON_SITE",
+        "name": "На месте работодателя"
+      }
+    ],
+    "working_hours": [
+      {
+        "id": "HOURS_8",
+        "name": "8 часов"
+      }
+    ],
+    "work_schedule_by_days": [
+      {
+        "id": "FIVE_ON_TWO_OFF",
+        "name": "5/2"
+      }
+    ],
+    "night_shifts": false,
+    "professional_roles": [
+      {
+        "id": "124",
+        "name": "Тестировщик"
+      }
+    ],
+    "accept_incomplete_resumes": false,
+    "experience": {
+      "id": "noExperience",
+      "name": "Нет опыта"
+    },
+    "employment": {
+      "id": "full",
+      "name": "Полная занятость"
+    },
+    "employment_form": {
+      "id": "FULL",
+      "name": "Полная"
+    },
+    "internship": false,
+    "adv_response_url": null,
+    "is_adv_vacancy": false,
+    "adv_context": null
+  },
+  {
+    "id": "121035272",
+    "premium": false,
+    "name": "Project Manager (FinTech) / Руководитель проектов в финтех-сфере",
+    "department": null,
+    "has_test": false,
+    "response_letter_required": false,
+    "area": {
+      "id": "1",
+      "name": "Москва",
+      "url": "https://api.hh.ru/areas/1"
+    },
+    "salary": {
+      "from": 470000,
+      "to": null,
+      "currency": "RUR",
+      "gross": true
+    },
+    "salary_range": {
+      "from": 470000,
+      "to": null,
+      "currency": "RUR",
+      "gross": true,
+      "mode": {
+        "id": "MONTH",
+        "name": "За месяц"
+      },
+      "frequency": null
+    },
+    "type": {
+      "id": "open",
+      "name": "Открытая"
+    },
+    "address": null,
+    "response_url": null,
+    "sort_point_distance": null,
+    "published_at": "2025-05-27T14:34:46+0300",
+    "created_at": "2025-05-27T14:34:46+0300",
+    "archived": false,
+    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121035272",
+    "show_logo_in_search": null,
+    "show_contacts": false,
+    "insider_interview": null,
+    "url": "https://api.hh.ru/vacancies/121035272?host=hh.ru",
+    "alternate_url": "https://hh.ru/vacancy/121035272",
+    "relations": [],
+    "employer": {
+      "id": "2066667",
+      "name": "Топассистент",
+      "url": "https://api.hh.ru/employers/2066667",
+      "alternate_url": "https://hh.ru/employer/2066667",
+      "logo_urls": {
+        "original": "https://img.hhcdn.ru/employer-logo-original/1243470.png",
+        "90": "https://img.hhcdn.ru/employer-logo/6594313.jpeg",
+        "240": "https://img.hhcdn.ru/employer-logo/6594314.jpeg"
+      },
+      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=2066667",
+      "accredited_it_employer": false,
+      "employer_rating": {
+        "total_rating": "4.9",
+        "reviews_count": 2
+      },
+      "trusted": true
+    },
+    "snippet": {
+      "requirement": "преимуществом будет владение основными маркетинг-метриками продукта, Tableau, Google Data Studio, <highlighttext>Python</highlighttext>, BI-инструментами. - возможность применять свой опыт, углубляясь в...",
+      "responsibility": "ведение разноплановых проектом полного и частичного цикла. - организация эффективного взаимодействия между отделами разработки, аналитики, управления продуктом и маркетинга. - "
+    },
+    "contacts": null,
+    "schedule": {
+      "id": "fullDay",
+      "name": "Полный день"
+    },
+    "working_days": [],
+    "working_time_intervals": [],
+    "working_time_modes": [],
+    "accept_temporary": false,
+    "fly_in_fly_out_duration": [],
+    "work_format": [
+      {
+        "id": "ON_SITE",
+        "name": "На месте работодателя"
+      }
+    ],
+    "working_hours": [
+      {
+        "id": "HOURS_8",
+        "name": "8 часов"
+      }
+    ],
+    "work_schedule_by_days": [
+      {
+        "id": "FIVE_ON_TWO_OFF",
+        "name": "5/2"
+      }
+    ],
+    "night_shifts": false,
+    "professional_roles": [
+      {
+        "id": "107",
+        "name": "Руководитель проектов"
+      }
+    ],
+    "accept_incomplete_resumes": false,
+    "experience": {
+      "id": "between3And6",
+      "name": "От 3 до 6 лет"
+    },
+    "employment": {
+      "id": "full",
+      "name": "Полная занятость"
+    },
+    "employment_form": {
+      "id": "FULL",
+      "name": "Полная"
+    },
+    "internship": false,
+    "adv_response_url": null,
+    "is_adv_vacancy": false,
+    "adv_context": null
+  },
+  {
+    "id": "121029906",
+    "premium": false,
+    "name": "Python Developer",
+    "department": null,
+    "has_test": false,
+    "response_letter_required": false,
+    "area": {
+      "id": "1",
+      "name": "Москва",
+      "url": "https://api.hh.ru/areas/1"
+    },
+    "salary": null,
+    "salary_range": null,
+    "type": {
+      "id": "open",
+      "name": "Открытая"
+    },
+    "address": {
+      "city": "Москва",
+      "street": "улица Бутырский Вал",
+      "building": "22с3",
+      "lat": 55.7808,
+      "lng": 37.586545,
+      "description": null,
+      "raw": "Москва, улица Бутырский Вал, 22с3",
+      "metro": null,
+      "metro_stations": [],
+      "id": "13196542"
+    },
+    "response_url": null,
+    "sort_point_distance": null,
+    "published_at": "2025-05-27T13:12:06+0300",
+    "created_at": "2025-05-27T13:12:06+0300",
+    "archived": false,
+    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=121029906",
+    "branding": {
+      "type": "MAKEUP",
+      "tariff": null
+    },
+    "show_logo_in_search": true,
+    "show_contacts": false,
+    "insider_interview": null,
+    "url": "https://api.hh.ru/vacancies/121029906?host=hh.ru",
+    "alternate_url": "https://hh.ru/vacancy/121029906",
+    "relations": [],
+    "employer": {
+      "id": "869045",
+      "name": "Московский метрополитен",
+      "url": "https://api.hh.ru/employers/869045",
+      "alternate_url": "https://hh.ru/employer/869045",
+      "logo_urls": {
+        "original": "https://img.hhcdn.ru/employer-logo-original/1393509.png",
+        "90": "https://img.hhcdn.ru/employer-logo/7193819.png",
+        "240": "https://img.hhcdn.ru/employer-logo/7193820.png"
+      },
+      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=869045",
+      "accredited_it_employer": false,
+      "employer_rating": null,
+      "trusted": true
+    },
+    "snippet": {
+      "requirement": "Законченное высшее образование. Опыт разработки на <highlighttext>Python</highlighttext> от 2х лет; Понимание как работают Web приложения, а также REST API. ",
+      "responsibility": "Написание новых систем. Будет плюсом опыт с RabbitMQ и websockets, а также понимание Docker и его особенность перед виртуализацией. "
+    },
+    "contacts": null,
+    "schedule": {
+      "id": "fullDay",
+      "name": "Полный день"
+    },
+    "working_days": [],
+    "working_time_intervals": [],
+    "working_time_modes": [],
+    "accept_temporary": false,
+    "fly_in_fly_out_duration": [],
+    "work_format": [],
+    "working_hours": [
+      {
+        "id": "HOURS_8",
+        "name": "8 часов"
+      }
+    ],
+    "work_schedule_by_days": [
+      {
+        "id": "FIVE_ON_TWO_OFF",
+        "name": "5/2"
+      }
+    ],
+    "night_shifts": false,
+    "professional_roles": [
+      {
+        "id": "96",
+        "name": "Программист, разработчик"
+      }
+    ],
+    "accept_incomplete_resumes": false,
+    "experience": {
+      "id": "between1And3",
+      "name": "От 1 года до 3 лет"
+    },
+    "employment": {
+      "id": "full",
+      "name": "Полная занятость"
+    },
+    "employment_form": {
+      "id": "FULL",
+      "name": "Полная"
+    },
+    "internship": false,
+    "adv_response_url": null,
+    "is_adv_vacancy": false,
+    "adv_context": null
+  },
+  {
+    "id": "120947925",
+    "premium": false,
+    "name": "QA Engineer",
+    "department": null,
+    "has_test": false,
+    "response_letter_required": false,
+    "area": {
+      "id": "4",
+      "name": "Новосибирск",
+      "url": "https://api.hh.ru/areas/4"
+    },
+    "salary": null,
+    "salary_range": null,
+    "type": {
+      "id": "open",
+      "name": "Открытая"
+    },
+    "address": null,
+    "response_url": null,
+    "sort_point_distance": null,
+    "published_at": "2025-05-26T07:25:40+0300",
+    "created_at": "2025-05-26T07:25:40+0300",
+    "archived": false,
+    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=120947925",
+    "branding": {
+      "type": "MAKEUP",
+      "tariff": null
+    },
+    "show_logo_in_search": true,
+    "show_contacts": false,
+    "insider_interview": null,
+    "url": "https://api.hh.ru/vacancies/120947925?host=hh.ru",
+    "alternate_url": "https://hh.ru/vacancy/120947925",
+    "relations": [],
+    "employer": {
+      "id": "5390761",
+      "name": "Совкомбанк Технологии",
+      "url": "https://api.hh.ru/employers/5390761",
+      "alternate_url": "https://hh.ru/employer/5390761",
+      "logo_urls": {
+        "original": "https://img.hhcdn.ru/employer-logo-original/1310092.png",
+        "90": "https://img.hhcdn.ru/employer-logo/6860626.png",
+        "240": "https://img.hhcdn.ru/employer-logo/6860627.png"
+      },
+      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=5390761",
+      "accredited_it_employer": true,
+      "employer_rating": {
+        "total_rating": "4.4",
+        "reviews_count": 380
+      },
+      "trusted": true
+    },
+    "snippet": {
+      "requirement": "Понимаете принципы работы СУБД и знаете SQL. Разбираетесь в Gitlab, Docker. *плюсом будет: умение читать код на <highlighttext>Python</highlighttext>, Java.",
+      "responsibility": "ПРОЕКТ: Наш продукт – современное web-приложение для обслуживания клиентов-физических лиц, которое является основным для работы более 4000 сотрудников. "
+    },
+    "contacts": null,
+    "schedule": {
+      "id": "fullDay",
+      "name": "Полный день"
+    },
+    "working_days": [],
+    "working_time_intervals": [],
+    "working_time_modes": [],
+    "accept_temporary": false,
+    "fly_in_fly_out_duration": [],
+    "work_format": [
+      {
+        "id": "ON_SITE",
+        "name": "На месте работодателя"
+      }
+    ],
+    "working_hours": [
+      {
+        "id": "HOURS_8",
+        "name": "8 часов"
+      }
+    ],
+    "work_schedule_by_days": [
+      {
+        "id": "FIVE_ON_TWO_OFF",
+        "name": "5/2"
+      }
+    ],
+    "night_shifts": false,
+    "professional_roles": [
+      {
+        "id": "124",
+        "name": "Тестировщик"
+      }
+    ],
+    "accept_incomplete_resumes": false,
+    "experience": {
+      "id": "between1And3",
+      "name": "От 1 года до 3 лет"
+    },
+    "employment": {
+      "id": "full",
+      "name": "Полная занятость"
+    },
+    "employment_form": {
+      "id": "FULL",
+      "name": "Полная"
+    },
+    "internship": false,
+    "adv_response_url": null,
+    "is_adv_vacancy": false,
+    "adv_context": null
+  },
+  {
+    "id": "120996469",
+    "premium": false,
+    "name": "Инженер-тестировщик (Manual QA)",
+    "department": null,
+    "has_test": false,
+    "response_letter_required": false,
+    "area": {
+      "id": "2",
+      "name": "Санкт-Петербург",
+      "url": "https://api.hh.ru/areas/2"
+    },
+    "salary": {
+      "from": 75000,
+      "to": null,
+      "currency": "RUR",
+      "gross": false
+    },
+    "salary_range": {
+      "from": 75000,
+      "to": null,
+      "currency": "RUR",
+      "gross": false,
+      "mode": {
+        "id": "MONTH",
+        "name": "За месяц"
+      },
+      "frequency": {
+        "id": "TWICE_PER_MONTH",
+        "name": "Два раза в месяц"
+      }
+    },
+    "type": {
+      "id": "open",
+      "name": "Открытая"
+    },
+    "address": {
+      "city": "Санкт-Петербург",
+      "street": "Биржевая линия",
+      "building": "14",
+      "lat": 59.944337,
+      "lng": 30.295207,
+      "description": null,
+      "raw": "Санкт-Петербург, Биржевая линия, 14",
+      "metro": {
+        "station_name": "Василеостровская",
+        "line_name": "Невско-Василеостровская",
+        "station_id": "16.228",
+        "line_id": "16",
+        "lat": 59.942577,
+        "lng": 30.278254
+      },
+      "metro_stations": [
+        {
+          "station_name": "Василеостровская",
+          "line_name": "Невско-Василеостровская",
+          "station_id": "16.228",
+          "line_id": "16",
+          "lat": 59.942577,
+          "lng": 30.278254
+        }
+      ],
+      "id": "487196"
+    },
+    "response_url": null,
+    "sort_point_distance": null,
+    "published_at": "2025-05-26T18:02:25+0300",
+    "created_at": "2025-05-26T18:02:25+0300",
+    "archived": false,
+    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=120996469",
+    "show_logo_in_search": null,
+    "show_contacts": true,
+    "insider_interview": null,
+    "url": "https://api.hh.ru/vacancies/120996469?host=hh.ru",
+    "alternate_url": "https://hh.ru/vacancy/120996469",
+    "relations": [],
+    "employer": {
+      "id": "1795976",
+      "name": "Университет ИТМО",
+      "url": "https://api.hh.ru/employers/1795976",
+      "alternate_url": "https://hh.ru/employer/1795976",
+      "logo_urls": {
+        "original": "https://img.hhcdn.ru/employer-logo-original/1008510.jpg",
+        "90": "https://img.hhcdn.ru/employer-logo/5654816.jpeg",
+        "240": "https://img.hhcdn.ru/employer-logo/5654817.jpeg"
+      },
+      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=1795976",
+      "accredited_it_employer": false,
+      "employer_rating": {
+        "total_rating": "3.7",
+        "reviews_count": 31
+      },
+      "trusted": true
+    },
+    "snippet": {
+      "requirement": "...с инструментами автоматизации (Playwright, Selenium итд); опыт написания автотестов на <highlighttext>Python</highlighttext>, JavaScript или другом языке; знание/опыт работы с TMS.",
+      "responsibility": "Manual QA (с перспективой роста в Automation QA). Тестировать web-приложения и API вручную. Составлять тест-кейсы и чек-листы. "
+    },
+    "contacts": null,
+    "schedule": {
+      "id": "fullDay",
+      "name": "Полный день"
+    },
+    "working_days": [],
+    "working_time_intervals": [],
+    "working_time_modes": [],
+    "accept_temporary": false,
+    "fly_in_fly_out_duration": [],
+    "work_format": [
+      {
+        "id": "HYBRID",
+        "name": "Гибрид"
+      }
+    ],
+    "working_hours": [
+      {
+        "id": "HOURS_8",
+        "name": "8 часов"
+      }
+    ],
+    "work_schedule_by_days": [
+      {
+        "id": "FIVE_ON_TWO_OFF",
+        "name": "5/2"
+      }
+    ],
+    "night_shifts": false,
+    "professional_roles": [
+      {
+        "id": "124",
+        "name": "Тестировщик"
+      }
+    ],
+    "accept_incomplete_resumes": false,
+    "experience": {
+      "id": "between1And3",
+      "name": "От 1 года до 3 лет"
+    },
+    "employment": {
+      "id": "full",
+      "name": "Полная занятость"
+    },
+    "employment_form": {
+      "id": "FULL",
+      "name": "Полная"
+    },
+    "internship": false,
+    "adv_response_url": null,
+    "is_adv_vacancy": false,
+    "adv_context": null
+  },
+  {
+    "id": "120942082",
+    "premium": false,
+    "name": "QA-инженер \\ QA-engineer",
+    "department": null,
+    "has_test": false,
+    "response_letter_required": false,
+    "area": {
+      "id": "11",
+      "name": "Барнаул",
+      "url": "https://api.hh.ru/areas/11"
+    },
+    "salary": {
+      "from": 80000,
+      "to": 120000,
+      "currency": "RUR",
+      "gross": false
+    },
+    "salary_range": {
+      "from": 80000,
+      "to": 120000,
+      "currency": "RUR",
+      "gross": false,
+      "mode": {
+        "id": "MONTH",
+        "name": "За месяц"
+      },
+      "frequency": null
+    },
+    "type": {
+      "id": "open",
+      "name": "Открытая"
+    },
+    "address": {
+      "city": "Барнаул",
+      "street": "улица Малахова",
+      "building": "146В",
+      "lat": 53.33554575807455,
+      "lng": 83.69190678157938,
+      "description": null,
+      "raw": "Барнаул, улица Малахова, 146В",
+      "metro": null,
+      "metro_stations": [],
+      "id": "7740759"
+    },
+    "response_url": null,
+    "sort_point_distance": null,
+    "published_at": "2025-05-26T04:53:49+0300",
+    "created_at": "2025-05-26T04:53:49+0300",
+    "archived": false,
+    "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=120942082",
+    "show_logo_in_search": null,
+    "show_contacts": false,
+    "insider_interview": null,
+    "url": "https://api.hh.ru/vacancies/120942082?host=hh.ru",
+    "alternate_url": "https://hh.ru/vacancy/120942082",
+    "relations": [],
+    "employer": {
+      "id": "6033189",
+      "name": "SMARTIX",
+      "url": "https://api.hh.ru/employers/6033189",
+      "alternate_url": "https://hh.ru/employer/6033189",
+      "logo_urls": {
+        "original": "https://img.hhcdn.ru/employer-logo-original/940677.png",
+        "90": "https://img.hhcdn.ru/employer-logo/4203248.png",
+        "240": "https://img.hhcdn.ru/employer-logo/4203249.png"
+      },
+      "vacancies_url": "https://api.hh.ru/vacancies?employer_id=6033189",
+      "accredited_it_employer": false,
+      "employer_rating": {
+        "total_rating": "4.3",
+        "reviews_count": 1
+      },
+      "trusted": true
+    },
+    "snippet": {
+      "requirement": "Знания теории и принципов тестирования ПО. Опыт тестирования ПО (от 1 года). Написание и поддержка автотестов. Навыки работы с Jenkins. ",
+      "responsibility": "...взаимодействие с командой разработки. Составление test cases. Написание и поддержка автотестов (java, kotlin, kotlin-js, <highlighttext>python</highlighttext>, spectron и т. д.)."
+    },
+    "contacts": null,
+    "schedule": {
+      "id": "fullDay",
+      "name": "Полный день"
+    },
+    "working_days": [],
+    "working_time_intervals": [],
+    "working_time_modes": [],
+    "accept_temporary": false,
+    "fly_in_fly_out_duration": [],
+    "work_format": [
+      {
+        "id": "ON_SITE",
+        "name": "На месте работодателя"
+      }
+    ],
+    "working_hours": [
+      {
+        "id": "HOURS_8",
+        "name": "8 часов"
+      }
+    ],
+    "work_schedule_by_days": [
+      {
+        "id": "FIVE_ON_TWO_OFF",
+        "name": "5/2"
+      }
+    ],
+    "night_shifts": false,
+    "professional_roles": [
+      {
+        "id": "124",
+        "name": "Тестировщик"
+      }
+    ],
+    "accept_incomplete_resumes": false,
+    "experience": {
+      "id": "between1And3",
+      "name": "От 1 года до 3 лет"
     },
     "employment": {
       "id": "full",
