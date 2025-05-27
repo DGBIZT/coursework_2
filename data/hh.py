@@ -44,7 +44,17 @@ class Vacancy:
         self.snippet = snippet.get("snippet").get('requirement')
 
     def __str__(self):
-        return f"{self.snippet}"
+        return f"{self.name_vacancy} {self.url_vacancy} {self.salary} {self.town} {self.snippet}"
+
+    def __eq__(self, other):
+        if isinstance(other, Vacancy):
+            return self.salary == other.salary
+        return NotImplemented
+
+    def __ge__(self, other):
+        if isinstance(other,Vacancy):
+            return self.salary >= other.salary
+        return NotImplemented
 
 
 if __name__ == '__main__':
@@ -60,7 +70,41 @@ if __name__ == '__main__':
             town=vacancy.get('area'),
             snippet=vacancy
         )
-        print(new_vacancy)
-        print("-" * 50)
+
+    if len(vacancies_list) >= 2:
+        vacancy1_data = vacancies_list[0]
+        vacancy2_data = vacancies_list[1]
+
+        vacancy1 = Vacancy(
+            name_vacancy=vacancy1_data,
+            url_vacancy=vacancy1_data,
+            salary=vacancy1_data.get('salary'),
+            town=vacancy1_data.get('area'),
+            snippet=vacancy1_data
+        )
+        vacancy2 = Vacancy(
+            name_vacancy=vacancy2_data,
+            url_vacancy=vacancy2_data,
+            salary=vacancy2_data.get('salary'),
+            town=vacancy2_data.get('area'),
+            snippet=vacancy2_data
+        )
+
+        if vacancy1 == vacancy2:
+            print("Зарплаты равны")
+        else:
+            print(f"Зарплаты отличаются:{"\n"} {vacancy1.name_vacancy}{vacancy1.salary}{"\n"} {vacancy2.name_vacancy} {vacancy2.salary}")
+
+        if vacancy1 >= vacancy2:
+            print(f"Вакансия №1 {vacancy1.name_vacancy} зарплата {vacancy1.salary} больше вакансии {vacancy2.name_vacancy} с зарплатой {vacancy2.salary}")
+        else:
+            print(f"Вакансия №1 {vacancy2.name_vacancy} зарплата {vacancy2.salary} больше вакансии {vacancy1.name_vacancy} с зарплатой {vacancy1.salary}")
+    else:
+
+        print("Недостаточно данных для сравнения")
+
+        # print(new_vacancy)
+        # print("-" * 50)
+
     # print(vacancies_list)
 
