@@ -63,6 +63,12 @@ class HH(VacancyApi):
         except IOError as e:
             print(f"Ошибка записи в файл: {e}")
 
+    # @staticmethod
+    # def filter_vacancies(vacancy_list, filter_words):
+    #     new_list = []
+    #     for v in vacancy_list:
+    #     pass
+
 class Vacancy:
     __slots__ = ("name_vacancy", "url_vacancy", "__salary", "town", "snippet")
     """

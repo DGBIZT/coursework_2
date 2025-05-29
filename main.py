@@ -14,7 +14,7 @@ def user_interaction():
     hh_api._VacancyApi__load_vacancies(search_query)
     vacancies_list = hh_api.get_vacancies()
     hh_api.file_writer_base()
-    # top_n = int(input("Введите количество вакансий для вывода в топ N: "))
+    top_n = int(input("Введите количество вакансий для вывода в топ N: "))
     # filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
     # salary_range = input("Введите диапазон зарплат: ")  # Пример: 100000 - 150000
 
