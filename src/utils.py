@@ -64,6 +64,10 @@ class HH(VacancyApi):
             print(f"Ошибка записи в файл: {e}")
 
 class Vacancy:
+    __slots__ = ("name_vacancy", "url_vacancy", "__salary", "town", "snippet")
+    """
+    Класс для работы с вакансиями
+    """
     def __init__(self, name_vacancy, url_vacancy, salary, town, snippet):
         self.name_vacancy = name_vacancy.get("name")
         self.url_vacancy = url_vacancy.get('alternate_url')
@@ -94,7 +98,7 @@ class JsonVacancyManager(FileStorage):
         self.__filename = filename
 
     def add_vacancy(self, vacancy_job):
-    #Добавление вакансии
+        """Добавление вакансии"""
         try:
             with open(self.__filename, "r+", encoding="utf-8" ) as file:
                 data = json.load(file) #Преобразование JSON-строки в Python-объект
@@ -110,6 +114,7 @@ class JsonVacancyManager(FileStorage):
             return f"Произошла ошибка: {str(e)}"
 
     def get_vacancies(self, criteria):
+        """ Получение данных из файла по указанным критериям """
         try:
             with open(self.__filename, "r", encoding="utf-8") as file:
                 data = json.load(file)
@@ -129,7 +134,7 @@ class JsonVacancyManager(FileStorage):
             return []
 
     def delete_vacancy(self, vacancy_id):
-        # Удаление вакансии
+        """Удаление вакансии"""
         try:
             with open(self.__filename, 'r+', encoding="utf-8") as file:
                 data = json.load(file)
@@ -155,8 +160,8 @@ if __name__ == '__main__':
             town=vacancy.get('area'),
             snippet=vacancy
         )
-    #     print (new_vacancy.salary)
-    # hh_parser.file_writer_base()
+        print (new_vacancy.salary)
+    hh_parser.file_writer_base()
     #
     # if len(vacancies_list) >= 2:
     #     vacancy1_data = vacancies_list[0]
@@ -207,7 +212,7 @@ if __name__ == '__main__':
         return salary is not None and salary < 70000
  # Получение всех вакансий с зарплатой меньше 70000
     high_salary_vacancies = manager.get_vacancies(salary_more_70k)
-    # print(high_salary_vacancies)
+    print(high_salary_vacancies)
 
     # Удаление вакансии по id
     # manager.delete_vacancy('121044247')
