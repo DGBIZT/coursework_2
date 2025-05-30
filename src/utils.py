@@ -74,12 +74,20 @@ class Vacancy:
     """
     Класс для работы с вакансиями
     """
-    def __init__(self, name_vacancy, url_vacancy, salary, town, snippet):
-        self.name_vacancy = name_vacancy.get("name")
-        self.url_vacancy = url_vacancy.get('alternate_url')
-        self.__salary = salary.get('from') if salary else 0
-        self.town = town.get('name')
-        self.snippet = snippet.get("snippet").get('requirement')
+    # def __init__(self, name_vacancy, url_vacancy, salary, town, snippet):
+    #     self.name_vacancy = name_vacancy.get("name")
+    #     self.url_vacancy = url_vacancy.get('alternate_url')
+    #     self.__salary = salary.get('from') if salary else 0
+    #     self.town = town.get('name')
+    #     self.snippet = snippet.get("snippet").get('requirement')
+
+    def __init__(self, data):
+        self.name_vacancy = data.get('name', '')
+        self.url_vacancy = data.get('alternate_url', '')
+        salary_data = data.get('salary')
+        self.__salary = salary_data.get('from', 0) if salary_data else 0
+        self.town = data.get('area', {}).get('name', '')
+        self.snippet = data.get('snippet', {}).get('requirement', '')
 
     @property
     def salary(self):
@@ -89,14 +97,21 @@ class Vacancy:
         return f"{self.name_vacancy} {self.url_vacancy} {self.__salary} {self.town} {self.snippet}"
 
     def __eq__(self, other):
+        """__eq__ - equal означает равно"""
         if isinstance(other, Vacancy):
             return self.__salary == other.__salary
         return NotImplemented
 
     def __ge__(self, other):
+        """__ge__ - greater than or equal означает больше или равно"""
         if isinstance(other,Vacancy):
             return self.__salary >= other.__salary
         return NotImplemented
+
+    def matches_keywords(self, keywords):
+        """Фильтрация по ключевым словам"""
+        text = f"{self.name_vacancy.lower()} {self.snippet.lower()}"
+        return any(word in text for word in keywords)
 
 class JsonVacancyManager(FileStorage):
 
@@ -154,21 +169,61 @@ class JsonVacancyManager(FileStorage):
             raise Exception(f"Произошла ошибка при удалении вакансии: {str(e)}")
 
 if __name__ == '__main__':
-    hh_parser = HH()
-    hh_parser._VacancyApi__load_vacancies("Python")
-    vacancies_list = hh_parser.get_vacancies()
+    vacancies_list = []  # Создаем список для хранения объектов
 
-    for vacancy in vacancies_list:
-        new_vacancy = Vacancy(
-            name_vacancy=vacancy,
-            url_vacancy=vacancy,
-            salary=vacancy.get('salary'),
-            town=vacancy.get('area'),
-            snippet=vacancy
-        )
-        print (new_vacancy.salary)
+    hh_parser = HH()
+    hh_parser._VacancyApi__load_vacancies("Водитель")
+    vacancies_data = hh_parser.get_vacancies()
     hh_parser.file_writer_base()
+
+    # Создаем объекты и добавляем их в список
+    for vacancy in vacancies_data:
+        new_vacancy = Vacancy(vacancy)  # Передаем всю вакансию как один параметр
+        vacancies_list.append(new_vacancy)
+
+    # Сортируем список по зарплате
+    sorted_vacancies = sorted(vacancies_list, key=lambda v: v.salary, reverse=True)
+    filter_words = input("Введите ключевые слова для фильтрации вакансий: ").lower().split()
+
+    # Фильтруем список вакансий
+    filtered_vacancies = [
+        vacancy for vacancy in vacancies_list
+        if vacancy.matches_keywords(filter_words)
+    ]
+
+    # Выводим отсортированные вакансии
+    for vacancy in sorted_vacancies:
+        print(vacancy)
+        print("-" * 50)  # Разделитель между вакансиями
+
+    # vacancies_list = []
+    # hh_parser = HH()
+    # hh_parser._VacancyApi__load_vacancies("Водитель")
+    # vacancies_data = hh_parser.get_vacancies()
+    # hh_parser.file_writer_base()
+
+    # for vacancy in vacancies_data:
+    #     new_vacancy = Vacancy(
+    #         name_vacancy=vacancy,
+    #         url_vacancy=vacancy,
+    #         salary=vacancy.get('salary'),
+    #         town=vacancy.get('area'),
+    #         snippet=vacancy
+    #     )
+    #     vacancies_list.append(new_vacancy)
+        # print (new_vacancy, "\n")
+
+    # for vacancy in vacancies_data:
+    #     new_vacancy = Vacancy(vacancy)
+    #     vacancies_list.append(new_vacancy)
     #
+    # sorted_vacancies = sorted(vacancies_list, key=lambda v: v.salary)
+    #
+    # for vacancy in sorted_vacancies:
+    #     print(vacancy)
+    #     print("-" * 50)
+
+#################################
     # if len(vacancies_list) >= 2:
     #     vacancy1_data = vacancies_list[0]
     #     vacancy2_data = vacancies_list[1]
@@ -187,12 +242,12 @@ if __name__ == '__main__':
     #         town=vacancy2_data.get('area'),
     #         snippet=vacancy2_data
     #     )
-    #
+    # #
     #     if vacancy1 == vacancy2:
     #         print("Зарплаты равны")
     #     else:
     #         print(f"Зарплаты отличаются:{"\n"} {vacancy1.name_vacancy} {vacancy1.salary}{"\n"} {vacancy2.name_vacancy} {vacancy2.salary}")
-    #
+
     #     if vacancy1 >= vacancy2:
     #         print(f"Вакансия №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary} больше вакансии №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary}")
     #     else:
@@ -201,26 +256,26 @@ if __name__ == '__main__':
     # else:
     #
     #     print("Недостаточно данных для сравнения")
-
+#############################################################
     # Пример использования
-    manager = JsonVacancyManager()
-
-
-    # Функция-предикат для фильтрации вакансий с зарплатой больше 100000
-    def salary_more_70k(vacancy):
-        # Проверяем существование зарплаты
-        if vacancy.get('salary') is None:
-            return False
-        # Получаем зарплату
-        salary = vacancy.get('salary', {}).get('from')
-
-        # Проверяем корректность данных
-        return salary is not None and salary < 70000
- # Получение всех вакансий с зарплатой меньше 70000
-    high_salary_vacancies = manager.get_vacancies(salary_more_70k)
-    print(high_salary_vacancies)
-
-    # Удаление вакансии по id
+ #    manager = JsonVacancyManager()
+ #
+ #
+ #    # Функция-предикат для фильтрации вакансий с зарплатой больше 100000
+ #    def salary_more_70k(vacancy):
+ #        # Проверяем существование зарплаты
+ #        if vacancy.get('salary') is None:
+ #            return False
+ #        # Получаем зарплату
+ #        salary = vacancy.get('salary', {}).get('from')
+ #
+ #        # Проверяем корректность данных
+ #        return salary is not None and salary < 70000
+ # # Получение всех вакансий с зарплатой меньше 70000
+ #    high_salary_vacancies = manager.get_vacancies(salary_more_70k)
+ #    print(high_salary_vacancies)
+ #
+ #    # Удаление вакансии по id
     # manager.delete_vacancy('121044247')
 
         # print(new_vacancy)
