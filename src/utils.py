@@ -79,12 +79,6 @@ class Vacancy:
     """
     Класс для работы с вакансиями
     """
-    # def __init__(self, name_vacancy, url_vacancy, salary, town, snippet):
-    #     self.name_vacancy = name_vacancy.get("name")
-    #     self.url_vacancy = url_vacancy.get('alternate_url')
-    #     self.__salary = salary.get('from') if salary else 0
-    #     self.town = town.get('name')
-    #     self.snippet = snippet.get("snippet").get('requirement')
 
     def __init__(self, data):
         self.name_vacancy = data.get('name', '')
@@ -149,7 +143,10 @@ class Vacancy:
         filtered_vacancies = [
             vacancy
             for vacancy in vacancies
-            if min_salary <= vacancy.salary <= max_salary
+            if (
+                    vacancy.salary is not None  # Проверяем, что зарплата не None
+                    and min_salary <= vacancy.salary <= max_salary
+            )
         ]
 
         return filtered_vacancies

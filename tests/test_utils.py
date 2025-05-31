@@ -574,18 +574,6 @@ def test_delete_vacancy_nonexistent_id():
             data = json.load(file)
             assert len(data) == 2
 
-
-# def test_delete_vacancy_empty_file():
-#     # Создаем пустой файл
-#     with NamedTemporaryFile(delete=False) as temp_file:
-#         filename = temp_file.name
-#         manager = JsonVacancyManager(filename)
-#
-#         # Пытаемся удалить вакансию из пустого файла
-#         with pytest.raises(FileNotFoundError):
-#             manager.delete_vacancy(1)
-
-
 def test_delete_vacancy_nonexistent_file():
     # Проверяем работу с несуществующим файлом
     manager = JsonVacancyManager("nonexistent_file.json")
