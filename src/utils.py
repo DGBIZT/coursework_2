@@ -2,6 +2,7 @@ import json
 import os
 from abc import ABC, abstractmethod
 from pathlib import Path
+from typing import List, Dict, Any, NoReturn, Tuple, Union, Optional, Callable
 
 import requests
 
@@ -46,7 +47,7 @@ class HH(VacancyApi):
         self.__params = {"text": "", "page": 0, "per_page": 100, "area": "113"}
         self.__vacancies = []
 
-    def _VacancyApi__load_vacancies(self, keyword):
+    def _VacancyApi__load_vacancies(self, keyword: str ) -> None:
         self.__params["text"] = keyword.lower()
         while self.__params.get("page") < 20:
             response = requests.get(self.__url, headers=self.__headers, params=self.__params)
@@ -60,10 +61,10 @@ class HH(VacancyApi):
             else:
                 raise Exception(f"Ошибка при запросе к API: {response.status_code}")
 
-    def get_vacancies(self):
+    def get_vacancies(self) -> List[Dict[str, Any]]:
         return self.__vacancies
 
-    def file_writer_base(self):
+    def file_writer_base(self) -> NoReturn:
         # Создаем директорию data, если она не существует
         data_dir = Path("data")
         data_dir.mkdir(parents=True, exist_ok=True)
@@ -83,7 +84,7 @@ class Vacancy:
     Класс для работы с вакансиями
     """
 
-    def __init__(self, data):
+    def __init__(self, data: Dict[str, Any]):
         self.name_vacancy = data.get("name", "")
         self.url_vacancy = data.get("alternate_url", "")
         salary_data = data.get("salary")
@@ -92,31 +93,31 @@ class Vacancy:
         self.snippet = data.get("snippet", {}).get("requirement", "")
 
     @property
-    def salary(self):
+    def salary(self) -> Union[int, float]:
         return self.__salary
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name_vacancy} {self.url_vacancy} {self.__salary} {self.town} {self.snippet}"
 
-    def __eq__(self, other):
+    def __eq__(self, other: object) -> bool:
         """__eq__ - equal означает равно"""
         if isinstance(other, Vacancy):
             return self.__salary == other.__salary
         return NotImplemented
 
-    def __ge__(self, other):
+    def __ge__(self, other: object) -> bool:
         """__ge__ - greater than or equal означает больше или равно"""
         if isinstance(other, Vacancy):
             return self.__salary >= other.__salary
         return NotImplemented
 
-    def matches_keywords(self, keywords):
+    def matches_keywords(self, keywords: List[str]) -> bool:
         """Фильтрация по ключевым словам"""
         text = f"{self.name_vacancy.lower()} {self.snippet.lower()}{self.town.lower()}"
         return any(word in text for word in keywords)
 
     @staticmethod
-    def top_number(vacancies, number):
+    def top_number(vacancies: List, number: int) -> List:
         """
         Возвращает топ N вакансий по зарплате
         :param vacancies: список объектов Vacancy
@@ -126,7 +127,7 @@ class Vacancy:
         return vacancies[: number + 1]
 
     @staticmethod
-    def salary_range(vacancies, salary_range):
+    def salary_range(vacancies: list, salary_range: Tuple[Union[int, float]]) -> List:
         """
         Фильтрует вакансии по указанному диапазону зарплат
         :param vacancies: список вакансий
@@ -161,7 +162,7 @@ class JsonVacancyManager(FileStorage):
         self.__filename = filename
         self.data = []
 
-    def add_vacancy(self, vacancy_job):
+    def add_vacancy(self, vacancy_job: Dict) -> Optional:
         """Добавление вакансии"""
         try:
             with open(self.__filename, "r+", encoding="utf-8") as file:
@@ -182,7 +183,7 @@ class JsonVacancyManager(FileStorage):
             return f"Произошла ошибка: {str(e)}"
         return None  # Возвращаем None при успешном выполнении
 
-    def get_vacancies(self, criteria):
+    def get_vacancies(self, criteria: Dict) -> Optional:
         """Получение данных из файла по указанным критериям"""
         try:
             with open(self.__filename, "r", encoding="utf-8") as file:
@@ -202,7 +203,7 @@ class JsonVacancyManager(FileStorage):
             print(f"Произошла ошибка: {str(e)}")
             return []
 
-    def delete_vacancy(self, vacancy_id):
+    def delete_vacancy(self, vacancy_id: int) -> None:
         """Удаление вакансии"""
         try:
             with open(self.__filename, "r+", encoding="utf-8") as file:
