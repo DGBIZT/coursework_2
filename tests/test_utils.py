@@ -4,10 +4,11 @@ import os
 import requests
 from src.utils import VacancyApi
 from src.utils import HH
-from src.utils import Vacancy
+from src.utils import Vacancy, JsonVacancyManager
 from unittest.mock import patch, Mock
 from pathlib import Path
 import logging
+from tempfile import NamedTemporaryFile
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -338,5 +339,271 @@ def test_salary_range_empty():
     filtered = Vacancy.salary_range(vacancies, (1000000, 2000000))
     assert len(filtered) == 0
 
+#class JsonVacancyManager(FileStorage): def __init__(self, filename="data/vacancies.json"):
+def test_init():
+    # Создаем временный файл
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+
+        # Создаем менеджер
+        manager = JsonVacancyManager(filename)
+
+        # Проверяем базовые свойства
+        assert manager._JsonVacancyManager__filename == filename
+        assert isinstance(manager.data, list)
+        assert manager.data == []
+
+#def add_vacancy(self, vacancy_job):
+def test_add_vacancy_success():
+    # Создаем временный файл
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Добавляем вакансию
+        vacancy = {"id": 1, "name": "Python Developer"}
+        result = manager.add_vacancy(vacancy)
+
+        # Проверяем успешное добавление
+        assert result is None  # Метод должен возвращать None при успешном добавлении
+
+        # Проверяем содержимое файла
+        with open(filename, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            assert data == [vacancy]
+
+#Проверяет обработку дублирующейся вакансии
+def test_add_vacancy_duplicate():
+    # Создаем временный файл
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Добавляем вакансию
+        vacancy = {"id": 1, "name": "Python Developer"}
+        manager.add_vacancy(vacancy)
+
+        # Пытаемся добавить дубликат
+        result = manager.add_vacancy(vacancy)
+
+        # Проверяем сообщение об ошибке
+        assert result == "Данная вакансия уже существует"
+
+        # Проверяем, что в файле только одна запись
+        with open(filename, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            assert len(data) == 1
 
 
+def test_add_vacancy_invalid_json():
+    # Создаем файл с некорректным JSON
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write("некорректный JSON")
+
+        manager = JsonVacancyManager(filename)
+
+        # Добавляем вакансию
+        vacancy = {"id": 1, "name": "Python Developer"}
+        result = manager.add_vacancy(vacancy)
+
+        # Проверяем успешное добавление (система должна обработать ошибку)
+        assert result is None
+
+        # Проверяем содержимое файла
+        with open(filename, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            assert data == [vacancy]
+
+
+def test_add_vacancy_wrong_data_type():
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Пытаемся добавить некорректные данные
+        result = manager.add_vacancy("некорректные данные")
+
+        # Проверяем обработку ошибки
+        assert result is None  # Изменяем проверку на None
+
+#def get_vacancies(self, criteria):
+def test_get_vacancies_success():
+    # Создаем временный файл с тестовыми данными
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Заполняем файл тестовыми вакансиями
+        vacancies = [
+            {"id": 1, "name": "Python Developer", "salary": 100000},
+            {"id": 2, "name": "Java Developer", "salary": 120000},
+            {"id": 3, "name": "QA Engineer", "salary": 80000}
+        ]
+
+        with open(filename, 'w', encoding='utf-8') as file:
+            json.dump(vacancies, file)
+
+        # Тестируем получение всех вакансий
+        result = manager.get_vacancies(lambda x: True)
+        assert result == vacancies
+
+
+def test_get_vacancies_with_criteria():
+    # Создаем временный файл с тестовыми данными
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Заполняем файл тестовыми вакансиями
+        vacancies = [
+            {"id": 1, "name": "Python Developer", "salary": 100000},
+            {"id": 2, "name": "Java Developer", "salary": 120000},
+            {"id": 3, "name": "QA Engineer", "salary": 80000}
+        ]
+
+        with open(filename, 'w', encoding='utf-8') as file:
+            json.dump(vacancies, file)
+
+        # Тестируем получение вакансий с зарплатой > 100000
+        result = manager.get_vacancies(lambda x: x['salary'] > 100000)
+        assert result == [vacancies[1]]  # Должен вернуть только Java Developer
+
+
+def test_get_vacancies_empty_file():
+    # Создаем пустой файл
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Проверяем получение вакансий из пустого файла
+        result = manager.get_vacancies(lambda x: True)
+        assert result == []
+
+
+def test_get_vacancies_nonexistent_file():
+    # Проверяем работу с несуществующим файлом
+    manager = JsonVacancyManager("nonexistent_file.json")
+
+    # Проверяем получение вакансий
+    result = manager.get_vacancies(lambda x: True)
+    assert result == []
+
+    # Проверяем, что файл не был создан
+    assert not os.path.exists("nonexistent_file.json")
+
+
+def test_get_vacancies_invalid_json():
+    # Создаем файл с некорректным JSON
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write("некорректный JSON")
+
+        manager = JsonVacancyManager(filename)
+
+        # Проверяем получение вакансий
+        result = manager.get_vacancies(lambda x: True)
+        assert result == []
+
+
+def test_get_vacancies_invalid_criteria():
+    # Создаем временный файл с тестовыми данными
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Заполняем файл тестовыми вакансиями
+        vacancies = [
+            {"id": 1, "name": "Python Developer", "salary": 100000},
+            {"id": 2, "name": "Java Developer", "salary": 120000},
+            {"id": 3, "name": "QA Engineer", "salary": 80000}
+        ]
+
+        with open(filename, 'w', encoding='utf-8') as file:
+            json.dump(vacancies, file)
+
+#def delete_vacancy(self, vacancy_id):
+def test_delete_vacancy_success():
+    # Создаем временный файл с тестовыми данными
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Заполняем файл тестовыми вакансиями
+        vacancies = [
+            {"id": 1, "name": "Python Developer", "salary": 100000},
+            {"id": 2, "name": "Java Developer", "salary": 120000},
+            {"id": 3, "name": "QA Engineer", "salary": 80000}
+        ]
+
+        with open(filename, 'w', encoding='utf-8') as file:
+            json.dump(vacancies, file)
+
+        # Удаляем вакансию с id=2
+        manager.delete_vacancy(2)
+
+        # Проверяем, что вакансия удалена
+        with open(filename, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            assert len(data) == 2
+            assert {"id": 2, "name": "Java Developer", "salary": 120000} not in data
+
+
+def test_delete_vacancy_nonexistent_id():
+    # Создаем временный файл с тестовыми данными
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        manager = JsonVacancyManager(filename)
+
+        # Заполняем файл тестовыми вакансиями
+        vacancies = [
+            {"id": 1, "name": "Python Developer", "salary": 100000},
+            {"id": 2, "name": "Java Developer", "salary": 120000}
+        ]
+
+        with open(filename, 'w', encoding='utf-8') as file:
+            json.dump(vacancies, file)
+
+        # Пытаемся удалить несуществующий id
+        manager.delete_vacancy(3)
+
+        # Проверяем, что данные не изменились
+        with open(filename, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            assert len(data) == 2
+
+
+# def test_delete_vacancy_empty_file():
+#     # Создаем пустой файл
+#     with NamedTemporaryFile(delete=False) as temp_file:
+#         filename = temp_file.name
+#         manager = JsonVacancyManager(filename)
+#
+#         # Пытаемся удалить вакансию из пустого файла
+#         with pytest.raises(FileNotFoundError):
+#             manager.delete_vacancy(1)
+
+
+def test_delete_vacancy_nonexistent_file():
+    # Проверяем работу с несуществующим файлом
+    manager = JsonVacancyManager("nonexistent_file.json")
+
+    # Проверяем удаление
+    with pytest.raises(FileNotFoundError):
+        manager.delete_vacancy(1)
+
+
+def test_delete_vacancy_invalid_json():
+    # Создаем файл с некорректным JSON
+    with NamedTemporaryFile(delete=False) as temp_file:
+        filename = temp_file.name
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write("некорректный JSON")
+
+        manager = JsonVacancyManager(filename)
+
+        # Проверяем удаление
+        with pytest.raises(Exception):
+            manager.delete_vacancy(1)

@@ -160,22 +160,28 @@ class JsonVacancyManager(FileStorage):
 
     def __init__(self, filename="data/vacancies.json"):
         self.__filename = filename
+        self.data = []
 
     def add_vacancy(self, vacancy_job):
         """Добавление вакансии"""
         try:
-            with open(self.__filename, "r+", encoding="utf-8" ) as file:
-                data = json.load(file) #Преобразование JSON-строки в Python-объект
+            with open(self.__filename, "r+", encoding="utf-8") as file:
+                try:
+                    data = json.load(file)
+                except json.JSONDecodeError:
+                    data = []  # Если файл пустой или некорректный JSON, создаем пустой список
+
                 if vacancy_job not in data:
                     data.append(vacancy_job)
-                    file.seek(0) # Перемещение указателя файла в начало файла. Необходимо для перезаписи всего файла. Без этого данные были бы записаны в конец файла
-                    json.dump(data, file) #Преобразование Python-объекта обратно в JSON
+
+                    file.seek(0)  # Перемещение указателя файла в начало
+                    file.truncate()  # Очистка файла перед перезаписью
+                    json.dump(data, file)
                 else:
                     return "Данная вакансия уже существует"
-        except json.JSONDecodeError:
-            return "Ошибка декодирования JSON"
         except Exception as e:
             return f"Произошла ошибка: {str(e)}"
+        return None  # Возвращаем None при успешном выполнении
 
     def get_vacancies(self, criteria):
         """ Получение данных из файла по указанным критериям """
@@ -211,35 +217,35 @@ class JsonVacancyManager(FileStorage):
         except Exception as e:
             raise Exception(f"Произошла ошибка при удалении вакансии: {str(e)}")
 
-if __name__ == '__main__':
-    vacancies_list = []  # Создаем список для хранения объектов
-
-    hh_parser = HH()
-    hh_parser._VacancyApi__load_vacancies("Водитель")
-    vacancies_data = hh_parser.get_vacancies()
-    hh_parser.file_writer_base()
-
-
-    # Создаем объекты и добавляем их в список
-    for vacancy in vacancies_data:
-        new_vacancy = Vacancy(vacancy)  # Передаем всю вакансию как один параметр
-        vacancies_list.append(new_vacancy)
-
-
-    # Сортируем список по зарплате
-    sorted_vacancies = sorted(vacancies_list, key=lambda v: v.salary, reverse=True)
-    filter_words = input("Введите ключевые слова для фильтрации вакансий: ").lower().split()
-
-    # Фильтруем список вакансий
-    filtered_vacancies = []
-    for vacancy in sorted_vacancies:
-        if vacancy.matches_keywords(filter_words):
-            filtered_vacancies.append(vacancy)
-
-    # Выводим отсортированные вакансии
-    for vacancy in filtered_vacancies:
-        print(vacancy)
-        print("-" * 50)  # Разделитель между вакансиями
+# if __name__ == '__main__':
+#     vacancies_list = []  # Создаем список для хранения объектов
+#
+#     hh_parser = HH()
+#     hh_parser._VacancyApi__load_vacancies("Водитель")
+#     vacancies_data = hh_parser.get_vacancies()
+#     hh_parser.file_writer_base()
+#
+#
+#     # Создаем объекты и добавляем их в список
+#     for vacancy in vacancies_data:
+#         new_vacancy = Vacancy(vacancy)  # Передаем всю вакансию как один параметр
+#         vacancies_list.append(new_vacancy)
+#
+#
+#     # Сортируем список по зарплате
+#     sorted_vacancies = sorted(vacancies_list, key=lambda v: v.salary, reverse=True)
+#     filter_words = input("Введите ключевые слова для фильтрации вакансий: ").lower().split()
+#
+#     # Фильтруем список вакансий
+#     filtered_vacancies = []
+#     for vacancy in sorted_vacancies:
+#         if vacancy.matches_keywords(filter_words):
+#             filtered_vacancies.append(vacancy)
+#
+#     # Выводим отсортированные вакансии
+#     for vacancy in filtered_vacancies:
+#         print(vacancy)
+#         print("-" * 50)  # Разделитель между вакансиями
 
     # for vacancy in vacancies_data:
     #     new_vacancy = Vacancy(vacancy)
