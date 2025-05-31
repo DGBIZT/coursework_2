@@ -1,6 +1,9 @@
 import requests
 from abc import ABC, abstractmethod
+import os
 import json
+from pathlib import Path
+
 
 class VacancyApi(ABC):
 
@@ -37,17 +40,20 @@ class HH(VacancyApi):
 
         self.__url = 'https://api.hh.ru/vacancies'
         self.__headers = {'User-Agent': 'HH-User-Agent'}
-        self.__params = {'text': '', 'page': 0, 'per_page': 10, "area": "113"}
+        self.__params = {'text': '', 'page': 0, 'per_page': 100, "area": "113"}
         self.__vacancies = []
 
     def _VacancyApi__load_vacancies(self, keyword):
         self.__params['text'] = keyword.lower()
-        while self.__params.get('page') != 1: # Пока не достиг одной страницы
+        while self.__params.get('page') < 20:
             response = requests.get(self.__url, headers=self.__headers, params=self.__params)
             if response.status_code == 200:
                 vacancies = response.json()['items']
                 self.__vacancies.extend(vacancies)
                 self.__params['page'] += 1
+                # Добавляем проверку на количество страниц
+                if response.json().get('pages') <= self.__params['page']:
+                    break
             else:
                 raise Exception(f"Ошибка при запросе к API: {response.status_code}")
 
@@ -55,10 +61,14 @@ class HH(VacancyApi):
         return self.__vacancies
 
     def file_writer_base(self):
-        # base_dir = os.path.dirname(__file__)
-        # full_path = os.path.join(base_dir, file_path)
+        # Создаем директорию data, если она не существует
+        data_dir = Path("data")
+        data_dir.mkdir(parents=True, exist_ok=True)
+
+        # Формируем полный путь к файлу
+        file_path = os.path.join(data_dir, "vacancies.json")
         try:
-            with open("data/vacancies.json", "w", encoding="utf-8") as f:
+            with open(file_path, "w", encoding="utf-8") as f:
                 json.dump(self.__vacancies,f, ensure_ascii=False, indent=2)
         except IOError as e:
             print(f"Ошибка записи в файл: {e}")
@@ -131,6 +141,9 @@ class Vacancy:
             raise ValueError("Диапазон зарплат должен быть кортежем из двух чисел")
 
         min_salary, max_salary = salary_range
+        # Проверяем, что оба значения числа
+        if not isinstance(min_salary, (int, float)) or not isinstance(max_salary, (int, float)):
+            raise TypeError("Значения диапазона зарплат должны быть числами")
 
         # Фильтруем вакансии по диапазону зарплат
         filtered_vacancies = [
@@ -228,60 +241,10 @@ if __name__ == '__main__':
         print(vacancy)
         print("-" * 50)  # Разделитель между вакансиями
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # vacancies_list = []
-    # hh_parser = HH()
-    # hh_parser._VacancyApi__load_vacancies("Водитель")
-    # vacancies_data = hh_parser.get_vacancies()
-    # hh_parser.file_writer_base()
-
-    # for vacancy in vacancies_data:
-    #     new_vacancy = Vacancy(
-    #         name_vacancy=vacancy,
-    #         url_vacancy=vacancy,
-    #         salary=vacancy.get('salary'),
-    #         town=vacancy.get('area'),
-    #         snippet=vacancy
-    #     )
-    #     vacancies_list.append(new_vacancy)
-        # print (new_vacancy, "\n")
-
     # for vacancy in vacancies_data:
     #     new_vacancy = Vacancy(vacancy)
     #     vacancies_list.append(new_vacancy)
-    #
-    # sorted_vacancies = sorted(vacancies_list, key=lambda v: v.salary)
-    #
-    # for vacancy in sorted_vacancies:
-    #     print(vacancy)
-    #     print("-" * 50)
 
-#################################
     # if len(vacancies_list) >= 2:
     #     vacancy1_data = vacancies_list[0]
     #     vacancy2_data = vacancies_list[1]
@@ -314,30 +277,5 @@ if __name__ == '__main__':
     # else:
     #
     #     print("Недостаточно данных для сравнения")
-#############################################################
-    # Пример использования
- #    manager = JsonVacancyManager()
- #
- #
- #    # Функция-предикат для фильтрации вакансий с зарплатой больше 100000
- #    def salary_more_70k(vacancy):
- #        # Проверяем существование зарплаты
- #        if vacancy.get('salary') is None:
- #            return False
- #        # Получаем зарплату
- #        salary = vacancy.get('salary', {}).get('from')
- #
- #        # Проверяем корректность данных
- #        return salary is not None and salary < 70000
- # # Получение всех вакансий с зарплатой меньше 70000
- #    high_salary_vacancies = manager.get_vacancies(salary_more_70k)
- #    print(high_salary_vacancies)
- #
- #    # Удаление вакансии по id
-    # manager.delete_vacancy('121044247')
 
-        # print(new_vacancy)
-        # print("-" * 50)
-
-    # print(vacancies_list)
 

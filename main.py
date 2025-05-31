@@ -3,7 +3,7 @@ hh_api = HH()
 
 def user_interaction():
     vacancies_list = []
-    platforms = ["HeadHunter"]
+    # platforms = ["HeadHunter"]
     search_query = input("Введите поисковый запрос: ")
     hh_api._VacancyApi__load_vacancies(search_query)
     vacancies_data = hh_api.get_vacancies()
@@ -47,4 +47,5 @@ def user_interaction():
         print(vacancy)
         print("-" * 50)  # Разделитель между вакансиями
 
-user_interaction()
+if __name__ == "__main__":
+    user_interaction()
