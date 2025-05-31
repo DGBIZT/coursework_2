@@ -2,7 +2,7 @@ import json
 import os
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import List, Dict, Any, NoReturn, Tuple, Union, Optional, Callable
+from typing import Any, Dict, List, NoReturn, Optional, Tuple, Union
 
 import requests
 
@@ -47,7 +47,7 @@ class HH(VacancyApi):
         self.__params = {"text": "", "page": 0, "per_page": 100, "area": "113"}
         self.__vacancies = []
 
-    def _VacancyApi__load_vacancies(self, keyword: str ) -> None:
+    def _VacancyApi__load_vacancies(self, keyword: str) -> None:
         self.__params["text"] = keyword.lower()
         while self.__params.get("page") < 20:
             response = requests.get(self.__url, headers=self.__headers, params=self.__params)
