@@ -1,8 +1,9 @@
-import requests
-from abc import ABC, abstractmethod
-import os
 import json
+import os
+from abc import ABC, abstractmethod
 from pathlib import Path
+
+import requests
 
 
 class VacancyApi(ABC):
@@ -14,6 +15,7 @@ class VacancyApi(ABC):
     @abstractmethod
     def file_writer_base(self):
         pass
+
 
 class FileStorage(ABC):
     # Абстрактный класс на добавление вакансии add_vacancy,
@@ -31,6 +33,7 @@ class FileStorage(ABC):
     def delete_vacancy(self, vacancy_id):
         pass
 
+
 class HH(VacancyApi):
     """
     Класс для работы с API HeadHunter
@@ -38,21 +41,21 @@ class HH(VacancyApi):
 
     def __init__(self):
 
-        self.__url = 'https://api.hh.ru/vacancies'
-        self.__headers = {'User-Agent': 'HH-User-Agent'}
-        self.__params = {'text': '', 'page': 0, 'per_page': 100, "area": "113"}
+        self.__url = "https://api.hh.ru/vacancies"
+        self.__headers = {"User-Agent": "HH-User-Agent"}
+        self.__params = {"text": "", "page": 0, "per_page": 100, "area": "113"}
         self.__vacancies = []
 
     def _VacancyApi__load_vacancies(self, keyword):
-        self.__params['text'] = keyword.lower()
-        while self.__params.get('page') < 20:
+        self.__params["text"] = keyword.lower()
+        while self.__params.get("page") < 20:
             response = requests.get(self.__url, headers=self.__headers, params=self.__params)
             if response.status_code == 200:
-                vacancies = response.json()['items']
+                vacancies = response.json()["items"]
                 self.__vacancies.extend(vacancies)
-                self.__params['page'] += 1
+                self.__params["page"] += 1
                 # Добавляем проверку на количество страниц
-                if response.json().get('pages') <= self.__params['page']:
+                if response.json().get("pages") <= self.__params["page"]:
                     break
             else:
                 raise Exception(f"Ошибка при запросе к API: {response.status_code}")
@@ -69,7 +72,7 @@ class HH(VacancyApi):
         file_path = os.path.join(data_dir, "vacancies.json")
         try:
             with open(file_path, "w", encoding="utf-8") as f:
-                json.dump(self.__vacancies,f, ensure_ascii=False, indent=2)
+                json.dump(self.__vacancies, f, ensure_ascii=False, indent=2)
         except IOError as e:
             print(f"Ошибка записи в файл: {e}")
 
@@ -81,12 +84,12 @@ class Vacancy:
     """
 
     def __init__(self, data):
-        self.name_vacancy = data.get('name', '')
-        self.url_vacancy = data.get('alternate_url', '')
-        salary_data = data.get('salary')
-        self.__salary = salary_data.get('from', 0) if salary_data else 0
-        self.town = data.get('area', {}).get('name', '')
-        self.snippet = data.get('snippet', {}).get('requirement', '')
+        self.name_vacancy = data.get("name", "")
+        self.url_vacancy = data.get("alternate_url", "")
+        salary_data = data.get("salary")
+        self.__salary = salary_data.get("from", 0) if salary_data else 0
+        self.town = data.get("area", {}).get("name", "")
+        self.snippet = data.get("snippet", {}).get("requirement", "")
 
     @property
     def salary(self):
@@ -103,7 +106,7 @@ class Vacancy:
 
     def __ge__(self, other):
         """__ge__ - greater than or equal означает больше или равно"""
-        if isinstance(other,Vacancy):
+        if isinstance(other, Vacancy):
             return self.__salary >= other.__salary
         return NotImplemented
 
@@ -120,7 +123,7 @@ class Vacancy:
         :param number: количество вакансий для вывода
         :return: список топ N вакансий
         """
-        return vacancies[:number + 1]
+        return vacancies[: number + 1]
 
     @staticmethod
     def salary_range(vacancies, salary_range):
@@ -144,13 +147,12 @@ class Vacancy:
             vacancy
             for vacancy in vacancies
             if (
-                    vacancy.salary is not None  # Проверяем, что зарплата не None
-                    and min_salary <= vacancy.salary <= max_salary
+                vacancy.salary is not None  # Проверяем, что зарплата не None
+                and min_salary <= vacancy.salary <= max_salary
             )
         ]
 
         return filtered_vacancies
-
 
 
 class JsonVacancyManager(FileStorage):
@@ -181,7 +183,7 @@ class JsonVacancyManager(FileStorage):
         return None  # Возвращаем None при успешном выполнении
 
     def get_vacancies(self, criteria):
-        """ Получение данных из файла по указанным критериям """
+        """Получение данных из файла по указанным критериям"""
         try:
             with open(self.__filename, "r", encoding="utf-8") as file:
                 data = json.load(file)
@@ -203,9 +205,9 @@ class JsonVacancyManager(FileStorage):
     def delete_vacancy(self, vacancy_id):
         """Удаление вакансии"""
         try:
-            with open(self.__filename, 'r+', encoding="utf-8") as file:
+            with open(self.__filename, "r+", encoding="utf-8") as file:
                 data = json.load(file)
-                data = [v for v in data if v.get('id') != vacancy_id]
+                data = [v for v in data if v.get("id") != vacancy_id]
                 file.seek(0)
                 file.truncate()
                 json.dump(data, file, ensure_ascii=False, indent=2)
@@ -213,6 +215,7 @@ class JsonVacancyManager(FileStorage):
             raise FileNotFoundError("Файл с вакансиями не найден")
         except Exception as e:
             raise Exception(f"Произошла ошибка при удалении вакансии: {str(e)}")
+
 
 # if __name__ == '__main__':
 #     vacancies_list = []  # Создаем список для хранения объектов
@@ -244,41 +247,41 @@ class JsonVacancyManager(FileStorage):
 #         print(vacancy)
 #         print("-" * 50)  # Разделитель между вакансиями
 
-    # for vacancy in vacancies_data:
-    #     new_vacancy = Vacancy(vacancy)
-    #     vacancies_list.append(new_vacancy)
+# for vacancy in vacancies_data:
+#     new_vacancy = Vacancy(vacancy)
+#     vacancies_list.append(new_vacancy)
 
-    # if len(vacancies_list) >= 2:
-    #     vacancy1_data = vacancies_list[0]
-    #     vacancy2_data = vacancies_list[1]
-    #
-    #     vacancy1 = Vacancy(
-    #         name_vacancy=vacancy1_data,
-    #         url_vacancy=vacancy1_data,
-    #         salary=vacancy1_data.get('salary'),
-    #         town=vacancy1_data.get('area'),
-    #         snippet=vacancy1_data
-    #     )
-    #     vacancy2 = Vacancy(
-    #         name_vacancy=vacancy2_data,
-    #         url_vacancy=vacancy2_data,
-    #         salary=vacancy2_data.get('salary'),
-    #         town=vacancy2_data.get('area'),
-    #         snippet=vacancy2_data
-    #     )
-    # #
-    #     if vacancy1 == vacancy2:
-    #         print("Зарплаты равны")
-    #     else:
-    #         print(f"Зарплаты отличаются:{"\n"} {vacancy1.name_vacancy} {vacancy1.salary}{"\n"} {vacancy2.name_vacancy} {vacancy2.salary}")
-
-    #     if vacancy1 >= vacancy2:
-    #         print(f"Вакансия №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary} больше вакансии №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary}")
-    #     else:
-    #         print(f"Вакансия №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary} больше вакансии №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary}")
-    #
-    # else:
-    #
-    #     print("Недостаточно данных для сравнения")
-
-
+# if len(vacancies_list) >= 2:
+#     vacancy1_data = vacancies_list[0]
+#     vacancy2_data = vacancies_list[1]
+#
+#     vacancy1 = Vacancy(
+#         name_vacancy=vacancy1_data,
+#         url_vacancy=vacancy1_data,
+#         salary=vacancy1_data.get('salary'),
+#         town=vacancy1_data.get('area'),
+#         snippet=vacancy1_data
+#     )
+#     vacancy2 = Vacancy(
+#         name_vacancy=vacancy2_data,
+#         url_vacancy=vacancy2_data,
+#         salary=vacancy2_data.get('salary'),
+#         town=vacancy2_data.get('area'),
+#         snippet=vacancy2_data
+#     )
+# #
+#     if vacancy1 == vacancy2:
+#         print("Зарплаты равны")
+#     else:
+#         print(f"Зарплаты отличаются:{"\n"} {vacancy1.name_vacancy} {vacancy1.salary}{"\n"}
+#         {vacancy2.name_vacancy} {vacancy2.salary}")
+#     if vacancy1 >= vacancy2:
+#         print(f"Вакансия №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary} больше
+#         вакансии №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary}")
+#     else:
+#         print(f"Вакансия №2 {vacancy2.name_vacancy} с зарплатой {vacancy2.salary} больше
+#         вакансии №1 {vacancy1.name_vacancy} с зарплатой {vacancy1.salary}")
+#
+# else:
+#
+#     print("Недостаточно данных для сравнения")
