@@ -63,11 +63,6 @@ class HH(VacancyApi):
         except IOError as e:
             print(f"Ошибка записи в файл: {e}")
 
-    # @staticmethod
-    # def filter_vacancies(vacancy_list, filter_words):
-    #     new_list = []
-    #     for v in vacancy_list:
-    #     pass
 
 class Vacancy:
     __slots__ = ("name_vacancy", "url_vacancy", "__salary", "town", "snippet")
@@ -110,8 +105,43 @@ class Vacancy:
 
     def matches_keywords(self, keywords):
         """Фильтрация по ключевым словам"""
-        text = f"{self.name_vacancy.lower()} {self.snippet.lower()}"
+        text = f"{self.name_vacancy.lower()} {self.snippet.lower()}{self.town.lower()}"
         return any(word in text for word in keywords)
+
+    @staticmethod
+    def top_number(vacancies, number):
+        """
+        Возвращает топ N вакансий по зарплате
+        :param vacancies: список объектов Vacancy
+        :param number: количество вакансий для вывода
+        :return: список топ N вакансий
+        """
+        return vacancies[:number + 1]
+
+    @staticmethod
+    def salary_range(vacancies, salary_range):
+        """
+        Фильтрует вакансии по указанному диапазону зарплат
+        :param vacancies: список вакансий
+        :param salary_range: кортеж с минимальным и максимальным значением зарплаты (min_salary, max_salary)
+        :return: список подходящих вакансий
+        """
+        # Проверяем корректность входных данных
+        if not isinstance(salary_range, tuple) or len(salary_range) != 2:
+            raise ValueError("Диапазон зарплат должен быть кортежем из двух чисел")
+
+        min_salary, max_salary = salary_range
+
+        # Фильтруем вакансии по диапазону зарплат
+        filtered_vacancies = [
+            vacancy
+            for vacancy in vacancies
+            if min_salary <= vacancy.salary <= max_salary
+        ]
+
+        return filtered_vacancies
+
+
 
 class JsonVacancyManager(FileStorage):
 
@@ -176,25 +206,53 @@ if __name__ == '__main__':
     vacancies_data = hh_parser.get_vacancies()
     hh_parser.file_writer_base()
 
+
     # Создаем объекты и добавляем их в список
     for vacancy in vacancies_data:
         new_vacancy = Vacancy(vacancy)  # Передаем всю вакансию как один параметр
         vacancies_list.append(new_vacancy)
+
 
     # Сортируем список по зарплате
     sorted_vacancies = sorted(vacancies_list, key=lambda v: v.salary, reverse=True)
     filter_words = input("Введите ключевые слова для фильтрации вакансий: ").lower().split()
 
     # Фильтруем список вакансий
-    filtered_vacancies = [
-        vacancy for vacancy in vacancies_list
-        if vacancy.matches_keywords(filter_words)
-    ]
+    filtered_vacancies = []
+    for vacancy in sorted_vacancies:
+        if vacancy.matches_keywords(filter_words):
+            filtered_vacancies.append(vacancy)
 
     # Выводим отсортированные вакансии
-    for vacancy in sorted_vacancies:
+    for vacancy in filtered_vacancies:
         print(vacancy)
         print("-" * 50)  # Разделитель между вакансиями
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # vacancies_list = []
     # hh_parser = HH()
